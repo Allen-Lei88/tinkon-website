@@ -225,7 +225,7 @@ h3 { font-size: 1.42rem; }
   margin-bottom: 46px;
 }
 .section-heading h2 { margin-bottom: 0; }
-.category-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.category-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
 .category-card {
   min-height: 390px;
   display: flex;
@@ -373,7 +373,9 @@ h3 { font-size: 1.42rem; }
 .story-copy { color: var(--slate-700); font-size: 1.2rem; }
 .story-copy p { margin-bottom: 26px; }
 .section-soft { background: var(--slate-100); }
-.value-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.capability-header { max-width: 760px; margin-bottom: 44px; }
+.capability-header > p:last-child { color: var(--slate-500); font-size: 1.06rem; }
+.value-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
 .value-grid article {
   padding: 36px;
   border-top: 3px solid var(--blue-600);
@@ -390,11 +392,13 @@ h3 { font-size: 1.42rem; }
 .contact-location {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 22px;
   margin-top: 42px;
   padding-top: 24px;
   border-top: 1px solid var(--slate-200);
 }
+.contact-location > div { display: flex; flex-direction: column; gap: 6px; }
+.contact-location a { color: var(--blue-600); font-weight: 700; }
 .contact-location span {
   color: var(--slate-500);
   font-size: 0.8rem;

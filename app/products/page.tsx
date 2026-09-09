@@ -5,41 +5,63 @@ import { PageHero } from "@/components/page-hero";
 export const metadata: Metadata = {
   title: "Products",
   description:
-    "Explore TINKON product capabilities across mobile, automotive and promotional technology accessories.",
+    "Explore TINKON product capabilities across phone, tablet, laptop and automotive accessories.",
 };
 
 const productGroups = [
   {
-    code: "MOBILE / 01",
-    title: "Mobile accessories",
-    description: "Protection and charging products prepared for branded retail programs.",
+    code: "CASES / 01",
+    title: "Phone cases",
+    description: "Protective cases developed for device fit, finish, branding and retail presentation.",
     items: [
-      "Phone cases and protective covers",
-      "Screen protectors and installation kits",
-      "Charging cables and adapters",
-      "Device stands and mounting solutions",
+      "iPhone and Samsung compatible cases",
+      "Clear, silicone and multi-material structures",
+      "Magnetic and functional case designs",
+      "Custom colors, finishes and packaging",
     ],
   },
   {
-    code: "AUTO / 02",
-    title: "EV & automotive accessories",
+    code: "MOBILE / 02",
+    title: "Mobile accessories",
+    description: "Everyday device accessories prepared for branded retail programs.",
+    items: [
+      "Screen protectors and installation kits",
+      "Charging cables and adapters",
+      "Phone wallets and organizers",
+      "Custom promotional accessories",
+    ],
+  },
+  {
+    code: "STANDS / 03",
+    title: "Stands and holders",
+    description: "Adjustable support products for desk, travel and in-car use.",
+    items: [
+      "Phone and tablet stands",
+      "Car phone holders",
+      "Gooseneck and adjustable stands",
+      "Monitor and laptop mounting solutions",
+    ],
+  },
+  {
+    code: "COMPUTING / 04",
+    title: "Tablet and laptop accessories",
+    description: "Practical accessories for workstations, mobile work and gaming setups.",
+    items: [
+      "Laptop stands and cooling products",
+      "Stylus and tablet accessories",
+      "Mouse pads and desk mats",
+      "Monitor mounts and workspace accessories",
+    ],
+  },
+  {
+    code: "AUTO / 05",
+    title: "EV and automotive accessories",
     description: "Fit-focused products for vehicle interiors, storage and everyday use.",
     items: [
       "Console and under-seat organizers",
       "Vehicle mounts and holders",
       "Interior protection accessories",
       "USB hubs and charging products",
-    ],
-  },
-  {
-    code: "PROMO / 03",
-    title: "Promotional technology",
-    description: "Customizable technology accessories for branded campaigns and gifting.",
-    items: [
-      "Custom-branded device accessories",
-      "Charging and power products",
-      "Tech organizers and travel items",
-      "Retail and presentation packaging",
     ],
   },
 ];

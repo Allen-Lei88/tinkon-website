@@ -22,6 +22,7 @@ export function Footer() {
         <div>
           <p className="footer-title">Contact</p>
           <Link href="/contact">Send an inquiry</Link>
+          <a href="mailto:allen@cntinkon.com">allen@cntinkon.com</a>
           <p>Dongguan, Guangdong, China</p>
         </div>
       </div>

@@ -3,21 +3,27 @@ import Link from "next/link";
 const categories = [
   {
     number: "01",
-    title: "Mobile Accessories",
-    text: "Cases, screen protection, charging products and everyday device accessories developed for retail programs.",
-    tags: ["Protection", "Charging", "Retail-ready"],
+    title: "Phone Cases",
+    text: "Protective cases developed around device fit, material, finish, branding and retail packaging requirements.",
+    tags: ["iPhone", "Samsung", "Custom finish"],
   },
   {
     number: "02",
-    title: "EV & Automotive",
-    text: "Purpose-built storage, mounting, interior protection and convenience accessories for modern vehicles.",
-    tags: ["Tesla & EV", "Interior", "Fit-tested"],
+    title: "Mobile Accessories",
+    text: "Screen protection, cables, wallets and everyday accessories prepared for branded retail programs.",
+    tags: ["Screen protection", "Charging", "Retail-ready"],
   },
   {
     number: "03",
-    title: "Promotional Technology",
-    text: "Custom-branded technology products designed for campaigns, corporate programs and gifting.",
-    tags: ["Custom logo", "Packaging", "Program support"],
+    title: "Stands & Holders",
+    text: "Phone, tablet and laptop stands, car holders and adjustable mounting solutions.",
+    tags: ["Desktop", "In-car", "Adjustable"],
+  },
+  {
+    number: "04",
+    title: "EV & Automotive",
+    text: "Fit-focused storage, mounting, interior protection and charging accessories for modern vehicles.",
+    tags: ["Tesla & EV", "Interior", "Fit-tested"],
   },
 ];
 
@@ -38,7 +44,7 @@ export default function Home() {
             <h1>Built for your market. Developed around your brief.</h1>
             <p className="hero-lede">
               TINKON helps importers, retailers and brands turn product ideas into
-              production-ready mobile and automotive accessories.
+              production-ready phone, tablet, laptop and automotive accessories.
             </p>
             <div className="button-row">
               <Link className="button button-light" href="/products">
@@ -60,10 +66,10 @@ export default function Home() {
               production and delivery.
             </p>
             <div className="panel-grid">
-              <span>Industrial design</span>
-              <span>Mechanical design</span>
-              <span>Supplier network</span>
-              <span>Quality control</span>
+              <span>Product development</span>
+              <span>Tooling design</span>
+              <span>Production sourcing</span>
+              <span>Quality assurance</span>
             </div>
           </div>
         </div>
@@ -73,8 +79,8 @@ export default function Home() {
         <div className="container trust-grid">
           <span>OEM / ODM</span>
           <span>Product engineering</span>
-          <span>Packaging support</span>
-          <span>International supply</span>
+          <span>Tooling & production</span>
+          <span>Packaging & delivery</span>
         </div>
       </section>
 

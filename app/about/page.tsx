@@ -14,7 +14,7 @@ export default function AboutPage() {
       <PageHero
         eyebrow="About TINKON"
         title="A practical product partner in Dongguan."
-        description="Dongguan TinKon Technology Co., Ltd. supports international buyers with product development, supplier coordination and order execution for technology accessories."
+        description="Dongguan TinKon Technology Co., Ltd. supports international buyers with OEM and ODM development for phone, tablet, laptop and automotive accessories."
       />
       <section className="section">
         <div className="container story-grid">
@@ -24,35 +24,50 @@ export default function AboutPage() {
           </div>
           <div className="story-copy">
             <p>
-              We work between the buyer’s requirements and the manufacturing
-              process—organizing specifications, resolving details and keeping
-              development aligned with commercial goals.
+              We work between the buyer’s requirements and the manufacturing process,
+              organizing specifications, resolving technical details and keeping
+              development aligned with target cost, quality and delivery goals.
             </p>
             <p>
-              Our focus is not simply finding a product. It is helping make sure
-              the right product is defined, sampled, packaged and prepared for
-              the intended market.
+              TINKON coordinates product development and international order execution.
+              Our core manufacturing partner, Emery Technology, provides precision
+              tooling, injection molding, surface treatment, assembly and product testing.
             </p>
           </div>
         </div>
       </section>
       <section className="section section-soft">
-        <div className="container value-grid">
-          <article>
-            <span>01</span>
-            <h3>Commercial clarity</h3>
-            <p>Product decisions are considered alongside target cost, timing and order volume.</p>
-          </article>
-          <article>
-            <span>02</span>
-            <h3>Technical coordination</h3>
-            <p>Structure, materials, finish and packaging details are organized before production.</p>
-          </article>
-          <article>
-            <span>03</span>
-            <h3>Consistent follow-through</h3>
-            <p>One coordinated workflow keeps decisions and production milestones visible.</p>
-          </article>
+        <div className="container">
+          <div className="capability-header">
+            <p className="eyebrow">Core manufacturing partner</p>
+            <h2>Engineering depth for production-ready products.</h2>
+            <p>
+              The capabilities below are provided through our long-term manufacturing
+              partner and support projects from feasibility review through mass production.
+            </p>
+          </div>
+          <div className="value-grid">
+            <article>
+              <span>16</span>
+              <h3>R&amp;D team members</h3>
+              <p>Structural, optical, electronic, packaging, tooling and validation expertise.</p>
+            </article>
+            <article>
+              <span>52</span>
+              <h3>Injection machines</h3>
+              <p>Single-color, double-injection and electric molding capabilities.</p>
+            </article>
+            <article>
+              <span>90–1,300T</span>
+              <h3>Molding range</h3>
+              <p>Equipment coverage for compact precision parts and larger structures.</p>
+            </article>
+            <article>
+              <span>30</span>
+              <h3>Mold sets per month</h3>
+              <p>Precision tooling supported by CNC, EDM, WEDM and measurement equipment.</p>
+            </article>
+          </div>
         </div>
       </section>
       <section className="section section-compact">
