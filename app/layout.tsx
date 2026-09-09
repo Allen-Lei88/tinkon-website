@@ -5,11 +5,11 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "TINKON | OEM & ODM Technology Accessories",
+    default: "TINKON | OEM & ODM EV, Mobile & Computer Accessories",
     template: "%s | TINKON",
   },
   description:
-    "OEM and ODM development for mobile, automotive and promotional technology accessories from Dongguan, China.",
+    "One-stop OEM, ODM and private-label development for EV, mobile, computer and custom accessories since 2011.",
 };
 
 export default function RootLayout({

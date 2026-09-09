@@ -58,6 +58,8 @@ export function ContactForm() {
           <option>Stands and holders</option>
           <option>Tablet and laptop accessories</option>
           <option>EV and automotive accessories</option>
+          <option>Promotional products</option>
+          <option>Custom silicone products</option>
           <option>Other product</option>
         </select>
       </label>

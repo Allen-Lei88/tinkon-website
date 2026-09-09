@@ -5,47 +5,47 @@ import { PageHero } from "@/components/page-hero";
 export const metadata: Metadata = {
   title: "Products",
   description:
-    "Explore TINKON product capabilities across phone, tablet, laptop and automotive accessories.",
+    "Explore TINKON capabilities across EV, automotive, mobile, computer, promotional and custom silicone products.",
 };
 
 const productGroups = [
   {
-    code: "CASES / 01",
-    title: "Phone cases",
-    description: "Protective cases developed for device fit, finish, branding and retail presentation.",
+    code: "EV & AUTO / 01",
+    title: "EV and automotive accessories",
+    description: "Fit-focused products for vehicle interiors, protection, organization and charging.",
     items: [
-      "iPhone and Samsung compatible cases",
-      "Clear, silicone and multi-material structures",
-      "Magnetic and functional case designs",
-      "Custom colors, finishes and packaging",
+      "Tesla, BYD and Rivian accessories",
+      "Console, trunk and under-seat organizers",
+      "Interior protection and display accessories",
+      "Vehicle mounts, USB hubs and charging products",
     ],
   },
   {
-    code: "MOBILE / 02",
-    title: "Mobile accessories",
-    description: "Everyday device accessories prepared for branded retail programs.",
+    code: "GLASS / 02",
+    title: "Tempered glass screen protectors",
+    description: "Clear and anti-glare protection developed around exact screen dimensions and use conditions.",
     items: [
-      "Screen protectors and installation kits",
+      "Automotive center and driver displays",
+      "Phone and tablet screen protection",
+      "Clear, matte and anti-glare finishes",
+      "Custom installation kits and retail packaging",
+    ],
+  },
+  {
+    code: "MOBILE / 03",
+    title: "Phone accessories",
+    description: "Protection, charging and support products prepared for branded retail programs.",
+    items: [
+      "Phone cases and protective covers",
       "Charging cables and adapters",
       "Phone wallets and organizers",
-      "Custom promotional accessories",
-    ],
-  },
-  {
-    code: "STANDS / 03",
-    title: "Stands and holders",
-    description: "Adjustable support products for desk, travel and in-car use.",
-    items: [
-      "Phone and tablet stands",
-      "Car phone holders",
-      "Gooseneck and adjustable stands",
-      "Monitor and laptop mounting solutions",
+      "Stands, holders and mounting solutions",
     ],
   },
   {
     code: "COMPUTING / 04",
-    title: "Tablet and laptop accessories",
-    description: "Practical accessories for workstations, mobile work and gaming setups.",
+    title: "Tablet and computer accessories",
+    description: "Practical peripherals and support products for workstations, mobile work and gaming.",
     items: [
       "Laptop stands and cooling products",
       "Stylus and tablet accessories",
@@ -54,14 +54,25 @@ const productGroups = [
     ],
   },
   {
-    code: "AUTO / 05",
-    title: "EV and automotive accessories",
-    description: "Fit-focused products for vehicle interiors, storage and everyday use.",
+    code: "PROMOTIONAL / 05",
+    title: "Promotional products",
+    description: "Useful technology accessories customized for campaigns, corporate programs and gifting.",
     items: [
-      "Console and under-seat organizers",
-      "Vehicle mounts and holders",
-      "Interior protection accessories",
-      "USB hubs and charging products",
+      "Custom-branded technology accessories",
+      "Charging and travel products",
+      "Logo, color and presentation customization",
+      "Retail and gift packaging",
+    ],
+  },
+  {
+    code: "SILICONE / 06",
+    title: "Custom silicone products",
+    description: "Custom-molded silicone items developed around functional, promotional or retail requirements.",
+    items: [
+      "Protective covers and functional components",
+      "Custom shapes, colors and textures",
+      "Logo and brand customization",
+      "Private-label packaging solutions",
     ],
   },
 ];
@@ -71,8 +82,8 @@ export default function ProductsPage() {
     <>
       <PageHero
         eyebrow="Product capabilities"
-        title="Focused categories. Flexible development."
-        description="Start from an existing product direction or bring us a new brief. We align materials, structure, branding and packaging around your market."
+        title="EV, mobile, computer and custom products."
+        description="Start from an existing product direction or bring us a new brief. We customize product design, materials, colors, logos, packaging and branding around your market."
       />
       <section className="section">
         <div className="container product-list">

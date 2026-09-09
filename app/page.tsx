@@ -3,27 +3,27 @@ import Link from "next/link";
 const categories = [
   {
     number: "01",
-    title: "Phone Cases",
-    text: "Protective cases developed around device fit, material, finish, branding and retail packaging requirements.",
-    tags: ["iPhone", "Samsung", "Custom finish"],
+    title: "EV & Automotive",
+    text: "Fit-focused accessories for Tesla, BYD, Rivian and other vehicle programs.",
+    tags: ["Interior organizers", "Protection", "Charging"],
   },
   {
     number: "02",
-    title: "Mobile Accessories",
-    text: "Screen protection, cables, wallets and everyday accessories prepared for branded retail programs.",
-    tags: ["Screen protection", "Charging", "Retail-ready"],
+    title: "Screen Protection",
+    text: "Tempered glass solutions for vehicle displays, phones, tablets and other devices.",
+    tags: ["Clear", "Anti-glare", "Custom fit"],
   },
   {
     number: "03",
-    title: "Stands & Holders",
-    text: "Phone, tablet and laptop stands, car holders and adjustable mounting solutions.",
-    tags: ["Desktop", "In-car", "Adjustable"],
+    title: "Mobile Accessories",
+    text: "Phone cases, charging products, stands and holders developed for branded retail programs.",
+    tags: ["Protection", "Charging", "Private label"],
   },
   {
     number: "04",
-    title: "EV & Automotive",
-    text: "Fit-focused storage, mounting, interior protection and charging accessories for modern vehicles.",
-    tags: ["Tesla & EV", "Interior", "Fit-tested"],
+    title: "Computer & Custom",
+    text: "Tablet and computer accessories, mouse pads, promotional products and custom silicone items.",
+    tags: ["Computer", "Promotional", "Silicone"],
   },
 ];
 
@@ -40,11 +40,11 @@ export default function Home() {
       <section className="hero">
         <div className="container hero-grid">
           <div className="hero-copy">
-            <p className="eyebrow eyebrow-light">Technology accessory development</p>
-            <h1>Built for your market. Developed around your brief.</h1>
+            <p className="eyebrow eyebrow-light">One-stop OEM manufacturing since 2011</p>
+            <h1>EV, mobile and computer accessories—from concept to delivery.</h1>
             <p className="hero-lede">
-              TINKON helps importers, retailers and brands turn product ideas into
-              production-ready phone, tablet, laptop and automotive accessories.
+              TINKON provides OEM, ODM and private-label solutions for global brands,
+              distributors, importers and e-commerce sellers.
             </p>
             <div className="button-row">
               <Link className="button button-light" href="/products">
@@ -59,17 +59,17 @@ export default function Home() {
           <div className="hero-panel" aria-label="TINKON capability overview">
             <div className="signal signal-one" />
             <div className="signal signal-two" />
-            <p className="panel-kicker">From concept to shipment</p>
-            <p className="panel-number">360°</p>
+            <p className="panel-kicker">Engineering & product development</p>
+            <p className="panel-number">5</p>
             <p className="panel-copy">
-              One coordinated workflow across product design, engineering,
-              production and delivery.
+              A focused team coordinating ideas, engineering decisions and the path
+              to production.
             </p>
             <div className="panel-grid">
-              <span>Product development</span>
-              <span>Tooling design</span>
-              <span>Production sourcing</span>
-              <span>Quality assurance</span>
+              <span>Industrial design</span>
+              <span>Mechanical design</span>
+              <span>Product engineering</span>
+              <span>Packaging & private label</span>
             </div>
           </div>
         </div>
@@ -77,10 +77,10 @@ export default function Home() {
 
       <section className="trust-strip">
         <div className="container trust-grid">
-          <span>OEM / ODM</span>
-          <span>Product engineering</span>
-          <span>Tooling & production</span>
-          <span>Packaging & delivery</span>
+          <span>Established in 2011</span>
+          <span>OEM / ODM / Private label</span>
+          <span>One-stop development</span>
+          <span>Global supply coordination</span>
         </div>
       </section>
 
