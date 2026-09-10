@@ -131,7 +131,7 @@ export default function Home() {
               </p>
               <div className="hero-actions">
                 <Link className="button button-primary" href="/products">
-                  Explore all {catalogProducts.length} products <span aria-hidden="true">↗</span>
+                  Explore more products <span aria-hidden="true">↗</span>
                 </Link>
                 <a className="text-link" href="#capabilities">
                   Why partner with us <span aria-hidden="true">↗</span>
@@ -208,8 +208,8 @@ export default function Home() {
               <p>
                 Build a focused range for retail, e-commerce and automotive
                 distribution. TINKON coordinates sourcing, presentation and
-                export-ready packaging around your market. Browse all {catalogProducts.length}
-                verified product pages for detailed specifications.
+                export-ready packaging around your market. Browse the growing
+                product range for detailed specifications.
               </p>
             </div>
 
@@ -241,7 +241,7 @@ export default function Home() {
             <div className="catalog-callout">
               <p>Explore the complete range, including EV interior protection, hooks, charging and selected technology accessories.</p>
               <Link className="button button-primary" href="/products">
-                View all {catalogProducts.length} products <span aria-hidden="true">↗</span>
+                Explore more products <span aria-hidden="true">↗</span>
               </Link>
             </div>
           </div>
