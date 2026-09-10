@@ -1,117 +1,174 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
-import { PageHero } from "@/components/page-hero";
+import { categories, products } from "@/data/products";
 
 export const metadata: Metadata = {
-  title: "Products",
+  title: "Wholesale EV & Technology Accessories | TINKON",
   description:
-    "Explore TINKON capabilities across EV, automotive, mobile, computer, promotional and custom silicone products.",
+    "Browse TINKON wholesale accessories for Tesla and other electric vehicles, vehicle charging, Starlink and DJI-compatible protection. OEM and ODM support available.",
+  alternates: { canonical: "https://tinkontech.com/products" },
 };
 
-const productGroups = [
-  {
-    code: "EV & AUTO / 01",
-    title: "EV and automotive accessories",
-    description: "Fit-focused products for vehicle interiors, protection, organization and charging.",
-    items: [
-      "Tesla, BYD and Rivian accessories",
-      "Console, trunk and under-seat organizers",
-      "Interior protection and display accessories",
-      "Vehicle mounts, USB hubs and charging products",
-    ],
-  },
-  {
-    code: "GLASS / 02",
-    title: "Tempered glass screen protectors",
-    description: "Clear and anti-glare protection developed around exact screen dimensions and use conditions.",
-    items: [
-      "Automotive center and driver displays",
-      "Phone and tablet screen protection",
-      "Clear, matte and anti-glare finishes",
-      "Custom installation kits and retail packaging",
-    ],
-  },
-  {
-    code: "MOBILE / 03",
-    title: "Phone accessories",
-    description: "Protection, charging and support products prepared for branded retail programs.",
-    items: [
-      "Phone cases and protective covers",
-      "Charging cables and adapters",
-      "Phone wallets and organizers",
-      "Stands, holders and mounting solutions",
-    ],
-  },
-  {
-    code: "COMPUTING / 04",
-    title: "Tablet and computer accessories",
-    description: "Practical peripherals and support products for workstations, mobile work and gaming.",
-    items: [
-      "Laptop stands and cooling products",
-      "Stylus and tablet accessories",
-      "Mouse pads and desk mats",
-      "Monitor mounts and workspace accessories",
-    ],
-  },
-  {
-    code: "PROMOTIONAL / 05",
-    title: "Promotional products",
-    description: "Useful technology accessories customized for campaigns, corporate programs and gifting.",
-    items: [
-      "Custom-branded technology accessories",
-      "Charging and travel products",
-      "Logo, color and presentation customization",
-      "Retail and gift packaging",
-    ],
-  },
-  {
-    code: "SILICONE / 06",
-    title: "Custom silicone products",
-    description: "Custom-molded silicone items developed around functional, promotional or retail requirements.",
-    items: [
-      "Protective covers and functional components",
-      "Custom shapes, colors and textures",
-      "Logo and brand customization",
-      "Private-label packaging solutions",
-    ],
-  },
-];
+const categoryIds: Record<string, string> = {
+  "Tesla Storage & Organization": "tesla-storage",
+  "Tesla Interior Protection": "tesla-protection",
+  "Tesla Hooks & Holders": "tesla-hooks",
+  "Vehicle Charging & Accessories": "vehicle-accessories",
+  "Connectivity & Camera Protection": "technology-accessories",
+};
 
 export default function ProductsPage() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "TINKON Wholesale Product Catalog",
+    url: "https://tinkontech.com/products",
+    mainEntity: {
+      "@type": "ItemList",
+      numberOfItems: products.length,
+      itemListElement: products.map((product, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        url: `https://tinkontech.com/products/${product.slug}`,
+        name: product.fullTitle,
+      })),
+    },
+  };
+
   return (
     <>
-      <PageHero
-        eyebrow="Product capabilities"
-        title="EV, mobile, computer and custom products."
-        description="Start from an existing product direction or bring us a new brief. We customize product design, materials, colors, logos, packaging and branding around your market."
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
-      <section className="section">
-        <div className="container product-list">
-          {productGroups.map((group) => (
-            <article className="product-group" key={group.code}>
-              <div>
-                <span className="category-number">{group.code}</span>
-                <h2>{group.title}</h2>
-                <p>{group.description}</p>
+
+      <div className="utility-bar">
+        <div className="shell utility-inner">
+          <span>TINKON · WHOLESALE PRODUCT CATALOG · OEM / ODM</span>
+          <a href="mailto:allen@tinkontech.com">allen@tinkontech.com ↗</a>
+        </div>
+      </div>
+
+      <header className="site-header">
+        <div className="shell nav-row">
+          <Link className="brand" href="/" aria-label="TINKON home">
+            <span className="brand-mark" aria-hidden="true">T</span>
+            <span className="brand-copy">
+              <span className="brand-word">TINKON</span>
+              <span className="brand-tag">GLOBAL SUPPLY</span>
+            </span>
+          </Link>
+          <nav className="desktop-nav" aria-label="Catalog navigation">
+            <Link href="/">Home</Link>
+            <a href="#categories">Categories</a>
+            <a href="#downloads">Catalogs</a>
+          </nav>
+          <a className="nav-cta" href="mailto:allen@tinkontech.com?subject=TINKON%20Product%20Enquiry">
+            Request a quotation <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </header>
+
+      <main>
+        <section className="catalog-hero">
+          <div className="shell catalog-hero-grid">
+            <div>
+              <p className="section-index">TINKON / PRODUCT CATALOG</p>
+              <h1>{products.length} products.<br />Built for wholesale.</h1>
+            </div>
+            <div>
+              <p>
+                Model-focused accessories prepared for distributors, importers,
+                retailers and private-label programs. Specifications are presented
+                conservatively and fitment is confirmed before bulk orders.
+              </p>
+              <div className="catalog-stat-row">
+                <span><strong>{categories.length}</strong> product groups</span>
+                <span><strong>OEM</strong> logo & packaging</span>
+                <span><strong>B2B</strong> quotation support</span>
               </div>
-              <ul>
-                {group.items.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </article>
-          ))}
-        </div>
-      </section>
-      <section className="section section-compact">
-        <div className="container inline-cta">
-          <div>
-            <p className="eyebrow">Have a specific product in mind?</p>
-            <h2>Share the key requirements with our team.</h2>
+            </div>
           </div>
-          <Link className="button" href="/contact">Send your brief</Link>
+        </section>
+
+        <section className="catalog-category-nav" id="categories">
+          <div className="shell">
+            {categories.map((category) => (
+              <a href={`#${categoryIds[category]}`} key={category}>{category}</a>
+            ))}
+          </div>
+        </section>
+
+        {categories.map((category, categoryIndex) => {
+          const categoryProducts = products.filter((product) => product.category === category);
+          return (
+            <section className="catalog-section" id={categoryIds[category]} key={category}>
+              <div className="shell">
+                <div className="catalog-section-heading">
+                  <p className="section-index">{String(categoryIndex + 1).padStart(2, "0")} / PRODUCT GROUP</p>
+                  <h2>{category}</h2>
+                  <span>{categoryProducts.length} products</span>
+                </div>
+                <div className="catalog-grid">
+                  {categoryProducts.map((product) => (
+                    <article className="catalog-card" key={product.slug}>
+                      <Link className="catalog-card-image" href={`/products/${product.slug}`}>
+                        <Image
+                          src={product.image}
+                          alt={product.imageAlt}
+                          width={800}
+                          height={800}
+                          sizes="(max-width: 760px) 100vw, (max-width: 1100px) 50vw, 33vw"
+                        />
+                      </Link>
+                      <div className="catalog-card-copy">
+                        <p>{product.category}</p>
+                        <h3><Link href={`/products/${product.slug}`}>{product.name}</Link></h3>
+                        <span>{product.description}</span>
+                        <Link className="catalog-card-link" href={`/products/${product.slug}`}>
+                          View specifications <b aria-hidden="true">↗</b>
+                        </Link>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              </div>
+            </section>
+          );
+        })}
+
+        <section className="catalog-downloads" id="downloads">
+          <div className="shell catalog-downloads-grid">
+            <div>
+              <p className="section-index">DOWNLOADABLE CATALOGS</p>
+              <h2>Share the range with your buying team.</h2>
+            </div>
+            <div className="download-list">
+              <a href="/downloads/TINKON_Tesla_Accessories_Catalogue_2026.pdf" download>
+                <span>Tesla Accessories Catalog 2026</span><b>PDF ↓</b>
+              </a>
+              <a href="/downloads/TINKON_Product_Catalogue_2026.pdf" download>
+                <span>TINKON Product Catalog 2026</span><b>PDF ↓</b>
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <div className="shell footer-main catalog-footer">
+          <Link className="brand brand-footer" href="/" aria-label="TINKON home">
+            <span className="brand-mark" aria-hidden="true">T</span>
+            <span className="brand-copy"><span className="brand-word">TINKON</span><span className="brand-tag">GLOBAL SUPPLY</span></span>
+          </Link>
+          <p>OEM and ODM accessories for global distributors, importers and private-label brands.</p>
+          <div className="footer-links">
+            <Link href="/">Home</Link>
+            <a href="mailto:allen@tinkontech.com">allen@tinkontech.com</a>
+          </div>
         </div>
-      </section>
+      </footer>
     </>
   );
 }
