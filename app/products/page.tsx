@@ -75,7 +75,7 @@ export default function ProductsPage() {
           <div className="shell catalog-hero-grid">
             <div>
               <p className="section-index">TINKON / PRODUCT CATALOG</p>
-              <h1>{products.length} products.<br />Built for wholesale.</h1>
+              <h1>A growing product range.<br />Built for wholesale.</h1>
             </div>
             <div>
               <p>
@@ -84,7 +84,7 @@ export default function ProductsPage() {
                 conservatively and fitment is confirmed before bulk orders.
               </p>
               <div className="catalog-stat-row">
-                <span><strong>{categories.length}</strong> product groups</span>
+                <span><strong>EV</strong> model-focused range</span>
                 <span><strong>OEM</strong> logo & packaging</span>
                 <span><strong>B2B</strong> quotation support</span>
               </div>
