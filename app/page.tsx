@@ -346,7 +346,7 @@ export default function Home() {
               </a>
             </div>
             <Image
-              src="/catalog/tesla-model-y-cup-holder-inserts.png"
+              src="/catalog/tesla-model-y-cup-holder-inserts.jpg"
               alt="TINKON silicone cup holder inserts in multiple colors"
               width="800"
               height="800"
