@@ -39,6 +39,7 @@ const structuredData = {
       description:
         "OEM and ODM electric vehicle accessories supplier for global distributors, importers and private-label brands.",
       url: "https://tinkontech.com",
+      logo: "https://tinkontech.com/tinkon-logo.png",
       email: "allen@tinkontech.com",
     },
     {
@@ -81,7 +82,7 @@ export default function Home() {
       <header className="site-header">
         <div className="shell nav-row">
           <a className="brand" href="#top" aria-label="TINKON home">
-            <span className="brand-mark" aria-hidden="true">T</span>
+            <Image className="brand-logo" src="/tinkon-logo.png" alt="" width={46} height={46} priority />
             <span className="brand-copy">
               <span className="brand-word">TINKON</span>
               <span className="brand-tag">GLOBAL SUPPLY</span>
@@ -420,7 +421,7 @@ export default function Home() {
       <footer>
         <div className="shell footer-main">
           <a className="brand brand-footer" href="#top" aria-label="TINKON home">
-            <span className="brand-mark" aria-hidden="true">T</span>
+            <Image className="brand-logo" src="/tinkon-logo.png" alt="" width={52} height={52} />
             <span className="brand-copy">
               <span className="brand-word">TINKON</span>
               <span className="brand-tag">GLOBAL SUPPLY</span>

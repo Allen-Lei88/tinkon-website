@@ -69,7 +69,7 @@ export default function ProductsPage() {
       <header className="site-header">
         <div className="shell nav-row">
           <Link className="brand" href="/" aria-label="TINKON home">
-            <span className="brand-mark" aria-hidden="true">T</span>
+            <Image className="brand-logo" src="/tinkon-logo.png" alt="" width={46} height={46} priority />
             <span className="brand-copy">
               <span className="brand-word">TINKON</span>
               <span className="brand-tag">GLOBAL SUPPLY</span>
@@ -175,7 +175,7 @@ export default function ProductsPage() {
       <footer>
         <div className="shell footer-main catalog-footer">
           <Link className="brand brand-footer" href="/" aria-label="TINKON home">
-            <span className="brand-mark" aria-hidden="true">T</span>
+            <Image className="brand-logo" src="/tinkon-logo.png" alt="" width={52} height={52} />
             <span className="brand-copy"><span className="brand-word">TINKON</span><span className="brand-tag">GLOBAL SUPPLY</span></span>
           </Link>
           <p>OEM and ODM accessories for global distributors, importers and private-label brands.</p>

@@ -75,7 +75,7 @@ export default async function ProductDetailPage({ params }: Props) {
       <header className="site-header">
         <div className="shell nav-row detail-nav-row">
           <Link className="brand" href="/" aria-label="TINKON home">
-            <span className="brand-mark" aria-hidden="true">T</span>
+            <Image className="brand-logo" src="/tinkon-logo.png" alt="" width={46} height={46} priority />
             <span className="brand-copy"><span className="brand-word">TINKON</span><span className="brand-tag">GLOBAL SUPPLY</span></span>
           </Link>
           <nav className="desktop-nav" aria-label="Product navigation">
@@ -162,7 +162,7 @@ export default async function ProductDetailPage({ params }: Props) {
 
       <footer>
         <div className="shell footer-main catalog-footer">
-          <Link className="brand brand-footer" href="/"><span className="brand-mark" aria-hidden="true">T</span><span className="brand-copy"><span className="brand-word">TINKON</span><span className="brand-tag">GLOBAL SUPPLY</span></span></Link>
+          <Link className="brand brand-footer" href="/"><Image className="brand-logo" src="/tinkon-logo.png" alt="" width={52} height={52} /><span className="brand-copy"><span className="brand-word">TINKON</span><span className="brand-tag">GLOBAL SUPPLY</span></span></Link>
           <p>Dongguan TinKon Technology Co., Ltd. — OEM and ODM accessories for global B2B buyers.</p>
           <div className="footer-links"><Link href="/products">All products</Link><a href="mailto:allen@tinkontech.com">allen@tinkontech.com</a></div>
         </div>

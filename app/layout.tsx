@@ -20,6 +20,10 @@ export const metadata: Metadata = {
     "Cybertruck accessories",
   ],
   alternates: { canonical: "/" },
+  icons: {
+    icon: "/tinkon-logo.png",
+    apple: "/tinkon-logo.png",
+  },
   robots: {
     index: true,
     follow: true,
