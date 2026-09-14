@@ -7,7 +7,23 @@ export const metadata: Metadata = {
   title: "Wholesale EV & Technology Accessories | TINKON",
   description:
     "Browse TINKON wholesale accessories for Tesla and other electric vehicles, vehicle charging, Starlink and DJI-compatible protection. OEM and ODM support available.",
-  alternates: { canonical: "https://tinkontech.com/products" },
+  alternates: { canonical: "/products" },
+  openGraph: {
+    type: "website",
+    url: "/products",
+    siteName: "TINKON",
+    title: "Wholesale EV & Technology Accessories | TINKON",
+    description:
+      "Browse TINKON wholesale accessories for Tesla and other electric vehicles, vehicle charging, Starlink and DJI-compatible protection. OEM and ODM support available.",
+    images: [
+      {
+        url: "/og.jpg",
+        width: 1200,
+        height: 630,
+        alt: "TINKON wholesale EV and technology accessories",
+      },
+    ],
+  },
 };
 
 const categoryIds: Record<string, string> = {
