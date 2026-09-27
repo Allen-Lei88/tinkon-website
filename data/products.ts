@@ -675,6 +675,20 @@ export const products: Product[] = [
     imageAlt: "TINKON configurable new-car protection and storage accessory bundle for Tesla vehicles",
     keywords: ["Tesla accessory bundle", "new car protection kit", "TPE floor mat set", "car organizer kit"],
   },
+  {
+    slug: "rivian-r2-drawer-organizer",
+    name: "Rivian R2 Drawer Organizer",
+    fullTitle: "ABS Center Console Drawer Organizer for Rivian R2 with Four Compartments",
+    category: "Rivian Storage & Organization",
+    model: "TK-R2-DO-01",
+    description: "A removable four-compartment tray designed to organize small everyday items inside the center-console drawer of compatible Rivian R2 vehicles.",
+    features: ["Four-compartment storage layout", "Supplier-listed ABS construction", "Textured compartment bases", "Removable drop-in format", "Custom labels and packaging on request"],
+    parameters: [["Material", "ABS, supplier-listed; base insert material to be confirmed"], ["Reference size", "Approx. 25 × 15 cm footprint; height to be confirmed"], ["Color", "Black"], ["Layout", "Four compartments with textured bases"], ["Installation", "Drop-in placement; confirm drawer clearance and closure"], ["Package", "To be confirmed"], ["MOQ", "To be confirmed"]],
+    application: "For supplier-identified Rivian R2 center-console drawer configurations. Confirm the vehicle version, drawer opening, internal dimensions, height and sample fit before ordering. Do not assume compatibility with R1T, R1S or other vehicles.",
+    image: "/catalog/rivian-r2-drawer-organizer.jpg",
+    imageAlt: "TINKON black four-compartment center console drawer organizer for Rivian R2",
+    keywords: ["Rivian R2 organizer", "center console drawer tray", "ABS compartment organizer", "EV interior storage", "Rivian accessories wholesale"],
+  },
 ];
 
 export const categories = Array.from(new Set(products.map((product) => product.category)));
