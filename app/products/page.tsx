@@ -29,6 +29,7 @@ export const metadata: Metadata = {
 const categoryIds: Record<string, string> = {
   "Tesla Storage & Organization": "tesla-storage",
   "Tesla Interior Protection": "tesla-protection",
+  "Automotive Interior Accessories": "automotive-interior-accessories",
   "Tesla Exterior Protection": "tesla-exterior-protection",
   "Rivian Storage & Organization": "rivian-storage",
   "Automotive Screen Protectors": "automotive-screen-protectors",
@@ -127,7 +128,7 @@ export default function ProductsPage() {
                 <div className="catalog-section-heading">
                   <p className="section-index">{String(categoryIndex + 1).padStart(2, "0")} / PRODUCT GROUP</p>
                   <h2>{category}</h2>
-                  <span>{categoryProducts.length} products</span>
+                  <span>{categoryProducts.length} {categoryProducts.length === 1 ? "product" : "products"}</span>
                 </div>
                 <div className="catalog-grid">
                   {categoryProducts.map((product) => (
