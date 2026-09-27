@@ -214,7 +214,7 @@ export const products: Product[] = [
     features: ["Dust-free alignment frame", "HD clear or matte center options", "Center-only and center-plus-rear kits", "Printed black border", "OEM labels and packaging available"],
     parameters: [["Material", "Supplier-described tempered glass"], ["Center display", "16-inch model-specific shape"], ["Finishes", "HD clear / anti-glare matte"], ["Set options", "Center only / center + rear"], ["Installation aid", "Dust-free alignment frame"], ["Package / MOQ", "To be confirmed"]],
     application: "For supplier-listed Tesla Model YL 2025 and Model Y 2026 display configurations. Confirm vehicle, market version, screen outline, finish, rear-screen requirement and sample fit before bulk production.",
-    image: "/catalog/tesla-model-y-yl-screen-protector.jpg",
+    image: "/catalog/tesla-model-y-yl-dust-free-screen-protector.jpg",
     imageAlt: "TINKON dust-free installation screen protector kit for Tesla Model YL and Model Y displays",
     keywords: ["Tesla screen protector", "Model YL tempered glass", "dust free installation", "16 inch screen protector", "automotive display protector"],
   },
