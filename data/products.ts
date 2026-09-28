@@ -1,3 +1,5 @@
+import { mixedModelYProducts } from "./mixedModelYProducts";
+
 export type Product = {
   slug: string;
   name: string;
@@ -816,6 +818,7 @@ export const products: Product[] = [
     imageAlt: "TINKON black four-compartment center console drawer organizer for Rivian R2",
     keywords: ["Rivian R2 organizer", "center console drawer tray", "ABS compartment organizer", "EV interior storage", "Rivian accessories wholesale"],
   },
+  ...mixedModelYProducts,
 ];
 
 export const categories = Array.from(new Set(products.map((product) => product.category)));
