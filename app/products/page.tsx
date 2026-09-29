@@ -31,6 +31,7 @@ const categoryIds: Record<string, string> = {
   "Tesla Interior Protection": "tesla-protection",
   "Automotive Interior Accessories": "automotive-interior-accessories",
   "Tesla Exterior Protection": "tesla-exterior-protection",
+  "Rivian Interior Protection": "rivian-interior-protection",
   "Rivian Storage & Organization": "rivian-storage",
   "Automotive Screen Protectors": "automotive-screen-protectors",
   "Tesla Hooks & Holders": "tesla-hooks",
