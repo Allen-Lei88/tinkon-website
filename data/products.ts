@@ -936,6 +936,19 @@ export const products: Product[] = [
     imageAlt: "TINKON white molded TPE floor mat options for Tesla vehicles",
     keywords: ["white Tesla floor mats", "TPE car floor liners", "Tesla molded floor mats", "white vehicle mat set", "Tesla interior protection"],
   },
+  {
+    slug: "tesla-cybertruck-panoramic-roof-sunshade",
+    name: "Cybertruck Panoramic Roof Sunshade",
+    fullTitle: "Foldable Panoramic Roof Sunshade for Tesla Cybertruck with Storage Bag",
+    category: "Tesla Interior Protection",
+    description: "A foldable interior shade for the panoramic glass roof of compatible Tesla Cybertruck vehicles, offered in black and light-color options with a storage bag.",
+    features: ["Panoramic glass-roof coverage", "Black and light-color options", "Foldable flexible-frame design", "Clip attachment shown", "OEM logo and packaging requests available"],
+    parameters: [["Material", "Supplier-listed coated fabric; exact composition to be confirmed"], ["Frame", "Supplier-listed flexible metal frame; alloy to be confirmed"], ["Colors", "Black / light color; exact shade to be confirmed"], ["Installation", "Clip attachment; clip type and quantity to be confirmed"], ["Package", "Roof shade and storage bag shown; final contents to be confirmed"], ["Dimensions / weight", "To be confirmed"], ["MOQ", "To be confirmed"]],
+    application: "Supplier-labeled for Tesla Cybertruck panoramic glass roofs. Confirm the exact vehicle, model year, market version, roof dimensions, clip specification and sample fit before ordering. Thermal and UV performance are not verified by a supplied test report.",
+    image: "/catalog/tesla-cybertruck-panoramic-roof-sunshade.jpg",
+    imageAlt: "TINKON foldable panoramic roof sunshade for Tesla Cybertruck",
+    keywords: ["Cybertruck roof sunshade", "Tesla panoramic roof shade", "foldable car sunshade", "Cybertruck interior accessories", "roof shade storage bag"],
+  },
   ...mixedModelYProducts,
 ];
 
