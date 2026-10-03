@@ -103,6 +103,15 @@ export const productGalleries: Record<string, readonly string[]> = {
     "/catalog/gallery-center-console-storage-view-04.jpg",
     "/catalog/gallery-center-console-storage-view-05.jpg"
   ],
+  "tesla-model-3-y-retractable-console-charging-hub": [
+    "/catalog/gallery-tesla-model-3-y-retractable-console-charging-hub-view-02.jpg",
+    "/catalog/gallery-tesla-model-3-y-retractable-console-charging-hub-view-03.jpg",
+    "/catalog/gallery-tesla-model-3-y-retractable-console-charging-hub-view-04.jpg",
+    "/catalog/gallery-tesla-model-3-y-retractable-console-charging-hub-view-05.jpg",
+    "/catalog/gallery-tesla-model-3-y-retractable-console-charging-hub-view-06.jpg",
+    "/catalog/gallery-tesla-model-3-y-retractable-console-charging-hub-view-07.jpg",
+    "/catalog/gallery-tesla-model-3-y-retractable-console-charging-hub-view-08.jpg"
+  ],
   "tesla-cybertruck-panoramic-roof-sunshade": [
     "/catalog/gallery-cybertruck-roof-sunshade-view-02.jpg",
     "/catalog/gallery-cybertruck-roof-sunshade-view-03.jpg",
