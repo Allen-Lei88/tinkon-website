@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { getProductGallery } from "@/data/productGalleries";
 import { getProduct, products } from "@/data/products";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -43,6 +44,7 @@ export default async function ProductDetailPage({ params }: Props) {
   const { slug } = await params;
   const product = getProduct(slug);
   if (!product) notFound();
+  const gallery = getProductGallery(product.slug);
 
   const related = products
     .filter((item) => item.category === product.category && item.slug !== product.slug)
@@ -111,6 +113,37 @@ export default async function ProductDetailPage({ params }: Props) {
             </a>
           </div>
         </section>
+
+        {gallery.length > 0 && (
+          <section className="product-gallery-section" aria-labelledby="product-gallery-title">
+            <div className="shell">
+              <div className="product-gallery-heading">
+                <div>
+                  <p className="section-index">PRODUCT GALLERY</p>
+                  <h2 id="product-gallery-title">More product details</h2>
+                </div>
+                <p>Explore additional angles, installation views and available configurations. Select an image to view it at full size.</p>
+              </div>
+              <div className="product-gallery-grid">
+                {gallery.map((src, index) => (
+                  <figure key={src}>
+                    <a href={src} target="_blank" rel="noreferrer" aria-label={`Open additional product view ${index + 2}`}>
+                      <Image
+                        src={src}
+                        alt={`${product.imageAlt} - additional view ${index + 2}`}
+                        width={800}
+                        height={800}
+                        sizes="(max-width: 580px) 100vw, (max-width: 900px) 50vw, 25vw"
+                      />
+                    </a>
+                    <figcaption>Additional view {String(index + 2).padStart(2, "0")}</figcaption>
+                  </figure>
+                ))}
+              </div>
+              <p className="product-gallery-note">Some images may show alternate colors or configurations within the same product family. Confirm the selected vehicle version and option before ordering.</p>
+            </div>
+          </section>
+        )}
 
         <section className="product-spec-section">
           <div className="shell product-spec-grid">
