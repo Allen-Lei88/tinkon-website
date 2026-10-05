@@ -119,6 +119,14 @@ export const productGalleries: Record<string, readonly string[]> = {
     "/catalog/gallery-tesla-model-3-y-rear-vent-charging-hub-view-05.jpg",
     "/catalog/gallery-tesla-model-3-y-rear-vent-charging-hub-view-06.jpg"
   ],
+  "tesla-model-3-y-glovebox-usb-hub": [
+    "/catalog/gallery-tesla-model-3-y-glovebox-usb-hub-view-02.jpg",
+    "/catalog/gallery-tesla-model-3-y-glovebox-usb-hub-view-03.jpg",
+    "/catalog/gallery-tesla-model-3-y-glovebox-usb-hub-view-04.jpg",
+    "/catalog/gallery-tesla-model-3-y-glovebox-usb-hub-view-05.jpg",
+    "/catalog/gallery-tesla-model-3-y-glovebox-usb-hub-view-06.jpg",
+    "/catalog/gallery-tesla-model-3-y-glovebox-usb-hub-view-07.jpg"
+  ],
   "tesla-cybertruck-panoramic-roof-sunshade": [
     "/catalog/gallery-cybertruck-roof-sunshade-view-02.jpg",
     "/catalog/gallery-cybertruck-roof-sunshade-view-03.jpg",
