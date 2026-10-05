@@ -118,15 +118,7 @@ export const productGalleries: Record<string, readonly string[]> = {
     "/catalog/gallery-tesla-model-3-y-rear-vent-charging-hub-view-04.jpg",
     "/catalog/gallery-tesla-model-3-y-rear-vent-charging-hub-view-05.jpg",
     "/catalog/gallery-tesla-model-3-y-rear-vent-charging-hub-view-06.jpg",
-    "/catalog/gallery-tesla-model-3-y-rear-vent-charging-hub-view-07.jpg",
-    "/catalog/gallery-tesla-model-3-y-rear-vent-charging-hub-view-08.jpg",
-    "/catalog/gallery-tesla-model-3-y-rear-vent-charging-hub-view-09.jpg",
-    "/catalog/gallery-tesla-model-3-y-rear-vent-charging-hub-view-10.jpg",
-    "/catalog/gallery-tesla-model-3-y-rear-vent-charging-hub-view-11.jpg",
-    "/catalog/gallery-tesla-model-3-y-rear-vent-charging-hub-view-12.jpg",
-    "/catalog/gallery-tesla-model-3-y-rear-vent-charging-hub-view-13.jpg",
-    "/catalog/gallery-tesla-model-3-y-rear-vent-charging-hub-view-14.jpg",
-    "/catalog/gallery-tesla-model-3-y-rear-vent-charging-hub-view-15.jpg"
+    "/catalog/gallery-tesla-model-3-y-rear-vent-charging-hub-view-07.jpg"
   ],
   "tesla-cybertruck-panoramic-roof-sunshade": [
     "/catalog/gallery-cybertruck-roof-sunshade-view-02.jpg",
