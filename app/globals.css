@@ -349,8 +349,7 @@ textarea {
   color: white;
 }
 
-.hero-label span,
-.hero-chip span {
+.hero-label span {
   display: block;
   margin-bottom: 10px;
   font-size: 10px;
@@ -361,21 +360,6 @@ textarea {
 .hero-label strong {
   font-size: 24px;
   line-height: 1.16;
-}
-
-.hero-chip {
-  position: absolute;
-  z-index: 3;
-  top: 28px;
-  right: -22px;
-  width: 162px;
-  padding: 21px;
-  background: var(--lime);
-}
-
-.hero-chip strong {
-  font-size: 16px;
-  line-height: 1.25;
 }
 
 .trust-band {
@@ -1595,10 +1579,6 @@ footer {
     height: 520px;
   }
 
-  .hero-chip {
-    right: 18px;
-  }
-
   .trust-row {
     padding: 25px 0;
     flex-wrap: wrap;
@@ -1697,11 +1677,6 @@ footer {
   .hero-label {
     left: 20px;
     bottom: 22px;
-  }
-
-  .hero-chip {
-    width: 142px;
-    padding: 17px;
   }
 
   .trust-row span {

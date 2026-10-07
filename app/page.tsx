@@ -180,10 +180,6 @@ export default function Home() {
                 <span>TINKON PRODUCT FOCUS / 01</span>
                 <strong>Real products,<br />commercially ready.</strong>
               </div>
-              <div className="hero-chip">
-                <span>Built for</span>
-                <strong>global distribution</strong>
-              </div>
             </div>
           </div>
         </section>
