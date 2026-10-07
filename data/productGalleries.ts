@@ -127,6 +127,14 @@ export const productGalleries: Record<string, readonly string[]> = {
     "/catalog/gallery-tesla-model-3-y-glovebox-usb-hub-view-06.jpg",
     "/catalog/gallery-tesla-model-3-y-glovebox-usb-hub-view-07.jpg"
   ],
+  "obd-usb-car-charger": [
+    "/catalog/gallery-obd-usb-car-charger-view-02.jpg",
+    "/catalog/gallery-obd-usb-car-charger-view-03.jpg",
+    "/catalog/gallery-obd-usb-car-charger-view-04.jpg",
+    "/catalog/gallery-obd-usb-car-charger-view-05.jpg",
+    "/catalog/gallery-obd-usb-car-charger-view-06.jpg",
+    "/catalog/gallery-obd-usb-car-charger-view-07.jpg"
+  ],
   "tesla-cybertruck-panoramic-roof-sunshade": [
     "/catalog/gallery-cybertruck-roof-sunshade-view-02.jpg",
     "/catalog/gallery-cybertruck-roof-sunshade-view-03.jpg",
