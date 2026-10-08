@@ -348,10 +348,12 @@ export const productGalleries: Record<string, readonly string[]> = {
     "/catalog/gallery-new-car-protection-bundle-view-05.jpg"
   ],
   "tesla-no-drill-mud-flaps": [
-    "/catalog/gallery-no-drill-mud-flaps-view-02.jpg",
-    "/catalog/gallery-no-drill-mud-flaps-view-03.jpg",
-    "/catalog/gallery-no-drill-mud-flaps-view-04.jpg",
-    "/catalog/gallery-no-drill-mud-flaps-view-05.jpg"
+    "/catalog/gallery-tesla-vehicle-specific-mud-flaps-view-02.jpg",
+    "/catalog/gallery-tesla-vehicle-specific-mud-flaps-view-03.jpg",
+    "/catalog/gallery-tesla-vehicle-specific-mud-flaps-view-04.jpg",
+    "/catalog/gallery-tesla-vehicle-specific-mud-flaps-view-05.jpg",
+    "/catalog/gallery-tesla-vehicle-specific-mud-flaps-view-06.jpg",
+    "/catalog/gallery-tesla-vehicle-specific-mud-flaps-view-07.jpg"
   ],
   "tesla-rear-air-vent-protective-frame": [
     "/catalog/gallery-rear-air-vent-frame-view-02.jpg",
