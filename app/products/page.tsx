@@ -6,7 +6,7 @@ import { categories, products } from "@/data/products";
 export const metadata: Metadata = {
   title: "Wholesale EV & Technology Accessories | TINKON",
   description:
-    "Browse TINKON wholesale accessories for Tesla and other electric vehicles, vehicle charging, Starlink and DJI-compatible protection. OEM and ODM support available.",
+    "Browse TINKON wholesale accessories for Tesla and other electric vehicles, interior protection, storage, charging and screen protection. OEM and ODM support available.",
   alternates: { canonical: "/products" },
   openGraph: {
     type: "website",
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     siteName: "TINKON",
     title: "Wholesale EV & Technology Accessories | TINKON",
     description:
-      "Browse TINKON wholesale accessories for Tesla and other electric vehicles, vehicle charging, Starlink and DJI-compatible protection. OEM and ODM support available.",
+      "Browse TINKON wholesale accessories for Tesla and other electric vehicles, interior protection, storage, charging and screen protection. OEM and ODM support available.",
     images: [
       {
         url: "/og.jpg",
@@ -37,7 +37,6 @@ const categoryIds: Record<string, string> = {
   "Automotive Screen Protectors": "automotive-screen-protectors",
   "Tesla Hooks & Holders": "tesla-hooks",
   "Vehicle Charging & Accessories": "vehicle-accessories",
-  "Connectivity & Camera Protection": "technology-accessories",
 };
 
 export default function ProductsPage() {

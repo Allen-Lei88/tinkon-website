@@ -32,18 +32,6 @@ export const productGalleries: Record<string, readonly string[]> = {
     "/catalog/gallery-byd-seal-screen-protectors-view-04.jpg",
     "/catalog/gallery-byd-seal-screen-protectors-view-05.jpg"
   ],
-  "dji-pocket-4-silicone-cover-4-piece": [
-    "/catalog/gallery-dji-pocket-4-cover-4-piece-view-02.jpg",
-    "/catalog/gallery-dji-pocket-4-cover-4-piece-view-03.jpg",
-    "/catalog/gallery-dji-pocket-4-cover-4-piece-view-04.jpg",
-    "/catalog/gallery-dji-pocket-4-cover-4-piece-view-05.jpg"
-  ],
-  "dji-pocket-4-silicone-cover-6-piece": [
-    "/catalog/gallery-dji-pocket-4-cover-6-piece-view-02.jpg",
-    "/catalog/gallery-dji-pocket-4-cover-6-piece-view-03.jpg",
-    "/catalog/gallery-dji-pocket-4-cover-6-piece-view-04.jpg",
-    "/catalog/gallery-dji-pocket-4-cover-6-piece-view-05.jpg"
-  ],
   "ford-mustang-mach-e-panoramic-roof-sunshade": [
     "/catalog/gallery-mustang-mach-e-roof-sunshade-view-02.jpg",
     "/catalog/gallery-mustang-mach-e-roof-sunshade-view-03.jpg",
@@ -84,18 +72,6 @@ export const productGalleries: Record<string, readonly string[]> = {
     "/catalog/gallery-rivian-r2-drawer-organizer-view-03.jpg",
     "/catalog/gallery-rivian-r2-drawer-organizer-view-04.jpg",
     "/catalog/gallery-rivian-r2-drawer-organizer-view-05.jpg"
-  ],
-  "starlink-mini-silicone-cover": [
-    "/catalog/gallery-starlink-mini-cover-view-02.jpg",
-    "/catalog/gallery-starlink-mini-cover-view-03.jpg",
-    "/catalog/gallery-starlink-mini-cover-view-04.jpg",
-    "/catalog/gallery-starlink-mini-cover-view-05.jpg"
-  ],
-  "starlink-standard-gen3-silicone-cover": [
-    "/catalog/gallery-starlink-gen3-cover-view-02.jpg",
-    "/catalog/gallery-starlink-gen3-cover-view-03.jpg",
-    "/catalog/gallery-starlink-gen3-cover-view-04.jpg",
-    "/catalog/gallery-starlink-gen3-cover-view-05.jpg"
   ],
   "tesla-center-console-storage-box-set": [
     "/catalog/gallery-center-console-storage-view-02.jpg",

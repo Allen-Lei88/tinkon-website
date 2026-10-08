@@ -189,7 +189,7 @@ export default async function ProductDetailPage({ params }: Props) {
         )}
 
         <p className="shell trademark-note">
-          Vehicle, Starlink and DJI names are trademarks of their respective owners and are used only to identify compatibility. TINKON is an independent aftermarket accessories supplier and is not affiliated with or endorsed by those owners.
+          Vehicle manufacturer names are trademarks of their respective owners and are used only to identify compatibility. TINKON is an independent aftermarket accessories supplier and is not affiliated with or endorsed by those owners.
         </p>
       </main>
 
