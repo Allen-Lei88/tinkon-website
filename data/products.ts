@@ -1041,6 +1041,19 @@ export const products: Product[] = [
     imageAlt: "TINKON foldable panoramic roof sunshade for Tesla Cybertruck",
     keywords: ["Cybertruck roof sunshade", "Tesla panoramic roof shade", "foldable car sunshade", "Cybertruck interior accessories", "roof shade storage bag"],
   },
+  {
+    slug: "tesla-model-3-y-folding-rear-screen-cup-holder",
+    name: "Folding Rear Screen Cup Holder",
+    fullTitle: "3-in-1 Folding Rear Cup Holder with Screen Frame and Vent Guard for Tesla Model 3 and Model Y",
+    category: "Tesla Storage & Organization",
+    description: "An integrated rear-console accessory combining two cup cavities, a passenger-screen surround and a slotted vent guard, with a fold-away holder for added rear-seat storage when needed.",
+    features: ["Dual rear cup compartments", "Integrated screen surround", "Slotted vent-guard section", "Fold-away holder with press latch", "Magnetic folded-position closure", "Rear charging-port access openings"],
+    parameters: [["Material / color", "Supplier-listed ABS / black"], ["Configuration", "1 integrated unit with dual cup cavities, screen surround and slotted vent guard"], ["Folding mechanism", "Press latch and magnetic closure shown"], ["Installation", "Adhesive backing strips shown; final instructions and surface preparation to confirm"], ["Package size", "Supplier-listed 41 × 24 × 11 cm"], ["Packed weight", "Supplier-listed approx. 0.71 kg"], ["Package contents", "1 accessory shown; final contents to confirm. Screen, phone and drinks are not included"], ["MOQ", "To be confirmed"]],
+    application: "Supplier-listed for selected Tesla Model 3 and Model Y rear-console layouts. Source images conflict between 2023–2024 and 2024–2025 model-year labels, so confirm the exact vehicle, market version, rear-screen outline, vent geometry, charging-port access, mounting surfaces and sample fit before ordering. Product dimensions, net weight, cup diameter limits, load rating, adhesive type and removal effects, certification, MOQ, price and lead time remain to be confirmed.",
+    image: "/catalog/tesla-model-3-y-folding-rear-screen-cup-holder.jpg",
+    imageAlt: "TINKON folding rear cup holder with screen frame and vent guard for compatible Tesla Model 3 and Model Y rear consoles",
+    keywords: ["Tesla rear cup holder", "folding rear cup holder", "rear screen frame", "rear console organizer", "rear vent guard"],
+  },
   ...mixedModelYProducts,
 ];
 

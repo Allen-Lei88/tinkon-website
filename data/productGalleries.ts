@@ -363,6 +363,14 @@ export const productGalleries: Record<string, readonly string[]> = {
     "/catalog/gallery-tesla-vehicle-specific-mud-flaps-view-06.jpg",
     "/catalog/gallery-tesla-vehicle-specific-mud-flaps-view-07.jpg"
   ],
+  "tesla-model-3-y-folding-rear-screen-cup-holder": [
+    "/catalog/gallery-tesla-model-3-y-folding-rear-screen-cup-holder-view-02.jpg",
+    "/catalog/gallery-tesla-model-3-y-folding-rear-screen-cup-holder-view-03.jpg",
+    "/catalog/gallery-tesla-model-3-y-folding-rear-screen-cup-holder-view-04.jpg",
+    "/catalog/gallery-tesla-model-3-y-folding-rear-screen-cup-holder-view-05.jpg",
+    "/catalog/gallery-tesla-model-3-y-folding-rear-screen-cup-holder-view-06.jpg",
+    "/catalog/gallery-tesla-model-3-y-folding-rear-screen-cup-holder-view-07.jpg"
+  ],
   "tesla-rear-air-vent-protective-frame": [
     "/catalog/gallery-rear-air-vent-frame-view-02.jpg",
     "/catalog/gallery-rear-air-vent-frame-view-03.jpg",
