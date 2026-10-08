@@ -112,6 +112,14 @@ export const productGalleries: Record<string, readonly string[]> = {
     "/catalog/gallery-tesla-model-3-y-retractable-console-charging-hub-view-07.jpg",
     "/catalog/gallery-tesla-model-3-y-retractable-console-charging-hub-view-08.jpg"
   ],
+  "tesla-model-3-y-hidden-console-charging-hub": [
+    "/catalog/gallery-tesla-model-3-y-hidden-console-charging-hub-view-02.jpg",
+    "/catalog/gallery-tesla-model-3-y-hidden-console-charging-hub-view-03.jpg",
+    "/catalog/gallery-tesla-model-3-y-hidden-console-charging-hub-view-04.jpg",
+    "/catalog/gallery-tesla-model-3-y-hidden-console-charging-hub-view-05.jpg",
+    "/catalog/gallery-tesla-model-3-y-hidden-console-charging-hub-view-06.jpg",
+    "/catalog/gallery-tesla-model-3-y-hidden-console-charging-hub-view-07.jpg"
+  ],
   "tesla-model-3-y-rear-vent-charging-hub": [
     "/catalog/gallery-tesla-model-3-y-rear-vent-charging-hub-view-02.jpg",
     "/catalog/gallery-tesla-model-3-y-rear-vent-charging-hub-view-03.jpg",
