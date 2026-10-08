@@ -157,6 +157,24 @@ export const productGalleries: Record<string, readonly string[]> = {
     "/catalog/gallery-cybertruck-roof-sunshade-view-04.jpg",
     "/catalog/gallery-cybertruck-roof-sunshade-view-05.jpg"
   ],
+  "tesla-cybertruck-bed-tie-down-ring-set": [
+    "/catalog/gallery-tesla-cybertruck-bed-rail-accessories-view-02.jpg"
+  ],
+  "tesla-cybertruck-bed-rail-hook-set": [
+    "/catalog/gallery-tesla-cybertruck-bed-rail-accessories-view-02.jpg"
+  ],
+  "tesla-cybertruck-bed-rail-tie-down-cleat": [
+    "/catalog/gallery-tesla-cybertruck-bed-rail-accessories-view-02.jpg"
+  ],
+  "tesla-cybertruck-bed-rail-bottle-opener": [
+    "/catalog/gallery-tesla-cybertruck-bed-rail-accessories-view-02.jpg"
+  ],
+  "tesla-cybertruck-lower-storage-panel-set": [
+    "/catalog/gallery-tesla-cybertruck-lower-storage-panel-set-view-02.jpg"
+  ],
+  "tesla-cybertruck-bed-side-panel-set": [
+    "/catalog/gallery-tesla-cybertruck-bed-side-panel-set-view-02.jpg"
+  ],
   "tesla-cybertruck-screen-protectors": [
     "/catalog/gallery-cybertruck-screen-protectors-view-02.jpg",
     "/catalog/gallery-cybertruck-screen-protectors-view-03.jpg",
