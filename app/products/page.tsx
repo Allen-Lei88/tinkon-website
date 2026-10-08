@@ -29,6 +29,7 @@ export const metadata: Metadata = {
 const categoryIds: Record<string, string> = {
   "Tesla Storage & Organization": "tesla-storage",
   "Tesla Interior Protection": "tesla-protection",
+  "Tesla Cybertruck Accessories": "tesla-cybertruck-accessories",
   "Automotive Interior Accessories": "automotive-interior-accessories",
   "Tesla Exterior Protection": "tesla-exterior-protection",
   "Rivian Interior Protection": "rivian-interior-protection",
