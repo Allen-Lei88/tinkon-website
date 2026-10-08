@@ -143,6 +143,14 @@ export const productGalleries: Record<string, readonly string[]> = {
     "/catalog/gallery-obd-usb-car-charger-view-06.jpg",
     "/catalog/gallery-obd-usb-car-charger-view-07.jpg"
   ],
+  "tesla-wall-mounted-charging-cable-organizer": [
+    "/catalog/gallery-tesla-wall-mounted-charging-cable-organizer-view-02.jpg",
+    "/catalog/gallery-tesla-wall-mounted-charging-cable-organizer-view-03.jpg",
+    "/catalog/gallery-tesla-wall-mounted-charging-cable-organizer-view-04.jpg",
+    "/catalog/gallery-tesla-wall-mounted-charging-cable-organizer-view-05.jpg",
+    "/catalog/gallery-tesla-wall-mounted-charging-cable-organizer-view-06.jpg",
+    "/catalog/gallery-tesla-wall-mounted-charging-cable-organizer-view-07.jpg"
+  ],
   "tesla-cybertruck-panoramic-roof-sunshade": [
     "/catalog/gallery-cybertruck-roof-sunshade-view-02.jpg",
     "/catalog/gallery-cybertruck-roof-sunshade-view-03.jpg",
