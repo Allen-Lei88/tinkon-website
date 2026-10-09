@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { featuredProducts as products, products as catalogProducts } from "@/data/products";
+import { getProductCategoryByName } from "@/data/productCategories";
+import { categories, featuredProducts as products, products as catalogProducts } from "@/data/products";
 
 const advantages = [
   {
@@ -52,7 +53,9 @@ const structuredData = {
           "@type": "Product",
           name: product.fullTitle,
           description: product.description,
-          category: "Electric Vehicle Accessories",
+          category: product.category,
+          url: `https://tinkontech.com/products/${product.slug}`,
+          image: `https://tinkontech.com${product.image}`,
           brand: { "@id": "#organization" },
           audience: {
             "@type": "BusinessAudience",
@@ -235,8 +238,27 @@ export default function Home() {
                 </article>
               ))}
             </div>
+            <div className="home-category-section">
+              <div className="home-category-heading">
+                <p className="section-index">BROWSE BY CATEGORY</p>
+                <h3>Find the right product group.</h3>
+              </div>
+              <div className="home-category-grid">
+                {categories.map((category) => {
+                  const categoryInfo = getProductCategoryByName(category);
+                  if (!categoryInfo) return null;
+                  const count = catalogProducts.filter((product) => product.category === category).length;
+                  return (
+                    <Link href={`/products/category/${categoryInfo.slug}`} key={category}>
+                      <strong>{category}</strong>
+                      <span>{count} {count === 1 ? "product" : "products"}</span>
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
             <div className="catalog-callout">
-              <p>Explore the complete range, including EV interior protection, hooks, charging and selected technology accessories.</p>
+              <p>Explore the complete range, including EV storage, interior and exterior protection, charging, holders and automotive screen protection.</p>
               <Link className="button button-primary" href="/products">
                 Explore more products <span aria-hidden="true">↗</span>
               </Link>
@@ -387,11 +409,7 @@ export default function Home() {
                 Products of interest
                 <select name="products" defaultValue="">
                   <option value="" disabled>Select a category</option>
-                  <option>Tesla storage and organization</option>
-                  <option>Tesla interior protection</option>
-                  <option>Tesla hooks and holders</option>
-                  <option>Vehicle charging accessories</option>
-                  <option>Connectivity and camera protection</option>
+                  {categories.map((category) => <option key={category}>{category}</option>)}
                   <option>Multiple categories</option>
                 </select>
               </label>

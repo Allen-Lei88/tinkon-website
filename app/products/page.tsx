@@ -1,26 +1,27 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { getProductCategoryByName } from "@/data/productCategories";
 import { categories, products } from "@/data/products";
 
 export const metadata: Metadata = {
-  title: "Wholesale EV & Technology Accessories | TINKON",
+  title: "Wholesale EV & Tesla Accessories | TINKON",
   description:
-    "Browse TINKON wholesale accessories for Tesla and other electric vehicles, interior protection, storage, charging and screen protection. OEM and ODM support available.",
+    "Browse TINKON wholesale Tesla and EV accessories for storage, interior and exterior protection, charging, holders and automotive screens. OEM and ODM support available.",
   alternates: { canonical: "/products" },
   openGraph: {
     type: "website",
     url: "/products",
     siteName: "TINKON",
-    title: "Wholesale EV & Technology Accessories | TINKON",
+    title: "Wholesale EV & Tesla Accessories | TINKON",
     description:
-      "Browse TINKON wholesale accessories for Tesla and other electric vehicles, interior protection, storage, charging and screen protection. OEM and ODM support available.",
+      "Browse TINKON wholesale Tesla and EV accessories for storage, interior and exterior protection, charging, holders and automotive screens. OEM and ODM support available.",
     images: [
       {
         url: "/og.jpg",
         width: 1200,
         height: 630,
-        alt: "TINKON wholesale EV and technology accessories",
+        alt: "TINKON wholesale Tesla and electric vehicle accessories",
       },
     ],
   },
@@ -115,21 +116,34 @@ export default function ProductsPage() {
 
         <section className="catalog-category-nav" id="categories">
           <div className="shell">
-            {categories.map((category) => (
-              <a href={`#${categoryIds[category]}`} key={category}>{category}</a>
-            ))}
+            {categories.map((category) => {
+              const categoryInfo = getProductCategoryByName(category);
+              if (!categoryInfo) return null;
+              return (
+                <Link href={`/products/category/${categoryInfo.slug}`} key={category}>
+                  {category}
+                </Link>
+              );
+            })}
           </div>
         </section>
 
         {categories.map((category, categoryIndex) => {
           const categoryProducts = products.filter((product) => product.category === category);
+          const categoryInfo = getProductCategoryByName(category);
+          if (!categoryInfo) return null;
           return (
             <section className="catalog-section" id={categoryIds[category]} key={category}>
               <div className="shell">
                 <div className="catalog-section-heading">
                   <p className="section-index">{String(categoryIndex + 1).padStart(2, "0")} / PRODUCT GROUP</p>
-                  <h2>{category}</h2>
-                  <span>{categoryProducts.length} {categoryProducts.length === 1 ? "product" : "products"}</span>
+                  <h2>
+                    <Link href={`/products/category/${categoryInfo.slug}`}>{category}</Link>
+                  </h2>
+                  <div className="catalog-section-meta">
+                    <span>{categoryProducts.length} {categoryProducts.length === 1 ? "product" : "products"}</span>
+                    <Link href={`/products/category/${categoryInfo.slug}`}>View category</Link>
+                  </div>
                 </div>
                 <div className="catalog-grid">
                   {categoryProducts.map((product) => (

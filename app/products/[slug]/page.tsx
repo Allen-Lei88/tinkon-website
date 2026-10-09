@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { getProductCategoryByName } from "@/data/productCategories";
 import { getProductGallery } from "@/data/productGalleries";
 import { getProduct, products } from "@/data/products";
 
@@ -14,7 +15,12 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const product = getProduct(slug);
-  if (!product) return {};
+  if (!product) {
+    return {
+      title: "Product Not Found | TINKON",
+      robots: { index: false, follow: false },
+    };
+  }
 
   const description = `${product.description} Wholesale enquiries and OEM/ODM customization from TINKON.`;
   const url = `https://tinkontech.com/products/${product.slug}`;
@@ -45,6 +51,10 @@ export default async function ProductDetailPage({ params }: Props) {
   const product = getProduct(slug);
   if (!product) notFound();
   const gallery = getProductGallery(product.slug);
+  const categoryInfo = getProductCategoryByName(product.category);
+  if (!categoryInfo) notFound();
+  const productUrl = `https://tinkontech.com/products/${product.slug}`;
+  const categoryUrl = `https://tinkontech.com/products/category/${categoryInfo.slug}`;
 
   const related = products
     .filter((item) => item.category === product.category && item.slug !== product.slug)
@@ -52,15 +62,30 @@ export default async function ProductDetailPage({ params }: Props) {
 
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": "Product",
-    name: product.fullTitle,
-    image: `https://tinkontech.com${product.image}`,
-    description: product.description,
-    sku: product.model,
-    brand: { "@type": "Brand", name: "TINKON" },
-    category: product.category,
-    audience: { "@type": "BusinessAudience", audienceType: "Distributors, importers and wholesalers" },
-    manufacturer: { "@type": "Organization", name: "Dongguan TinKon Technology Co., Ltd." },
+    "@graph": [
+      {
+        "@type": "Product",
+        "@id": `${productUrl}#product`,
+        url: productUrl,
+        name: product.fullTitle,
+        image: [product.image, ...gallery].map((src) => `https://tinkontech.com${src}`),
+        description: product.description,
+        sku: product.model,
+        brand: { "@type": "Brand", name: "TINKON" },
+        category: product.category,
+        audience: { "@type": "BusinessAudience", audienceType: "Distributors, importers and wholesalers" },
+        manufacturer: { "@type": "Organization", name: "Dongguan TinKon Technology Co., Ltd." },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: "https://tinkontech.com" },
+          { "@type": "ListItem", position: 2, name: "Products", item: "https://tinkontech.com/products" },
+          { "@type": "ListItem", position: 3, name: product.category, item: categoryUrl },
+          { "@type": "ListItem", position: 4, name: product.name, item: productUrl },
+        ],
+      },
+    ],
   };
 
   return (
@@ -92,7 +117,8 @@ export default async function ProductDetailPage({ params }: Props) {
 
       <main className="product-detail-main">
         <div className="shell breadcrumb">
-          <Link href="/">Home</Link><span>/</span><Link href="/products">Products</Link><span>/</span><b>{product.name}</b>
+          <Link href="/">Home</Link><span>/</span><Link href="/products">Products</Link><span>/</span>
+          <Link href={`/products/category/${categoryInfo.slug}`}>{product.category}</Link><span>/</span><b>{product.name}</b>
         </div>
 
         <section className="product-detail-hero shell">
@@ -174,7 +200,10 @@ export default async function ProductDetailPage({ params }: Props) {
         {related.length > 0 && (
           <section className="related-products">
             <div className="shell">
-              <div className="related-heading"><p className="section-index">RELATED PRODUCTS</p><Link href="/products">View full catalog ↗</Link></div>
+              <div className="related-heading">
+                <p className="section-index">RELATED PRODUCTS</p>
+                <Link href={`/products/category/${categoryInfo.slug}`}>View {product.category} ↗</Link>
+              </div>
               <div className="related-grid">
                 {related.map((item) => (
                   <Link href={`/products/${item.slug}`} key={item.slug}>

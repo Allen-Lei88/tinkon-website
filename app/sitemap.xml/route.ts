@@ -1,3 +1,4 @@
+import { productCategories } from "@/data/productCategories";
 import { products } from "@/data/products";
 
 function escapeXml(value: string) {
@@ -20,6 +21,7 @@ export async function GET() {
   const urls = [
     origin,
     `${origin}/products`,
+    ...productCategories.map((category) => `${origin}/products/category/${category.slug}`),
     ...products.map((product) => `${origin}/products/${product.slug}`),
   ];
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
