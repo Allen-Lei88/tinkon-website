@@ -64,20 +64,20 @@ export default async function ProductDetailPage({ params }: Props) {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Product",
-        "@id": `${productUrl}#product`,
+        // Quote-only OEM/ODM pages do not have public offers or verified reviews.
+        // Describe the page without requesting unsupported Product rich results.
+        "@type": "WebPage",
+        "@id": `${productUrl}#webpage`,
         url: productUrl,
         name: product.fullTitle,
         image: [product.image, ...gallery].map((src) => `https://tinkontech.com${src}`),
         description: product.description,
-        sku: product.model,
-        brand: { "@type": "Brand", name: "TINKON" },
-        category: product.category,
-        audience: { "@type": "BusinessAudience", audienceType: "Distributors, importers and wholesalers" },
-        manufacturer: { "@type": "Organization", name: "Dongguan TinKon Technology Co., Ltd." },
+        breadcrumb: { "@id": `${productUrl}#breadcrumb` },
+        publisher: { "@type": "Organization", name: "Dongguan TinKon Technology Co., Ltd." },
       },
       {
         "@type": "BreadcrumbList",
+        "@id": `${productUrl}#breadcrumb`,
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Home", item: "https://tinkontech.com" },
           { "@type": "ListItem", position: 2, name: "Products", item: "https://tinkontech.com/products" },
@@ -90,7 +90,7 @@ export default async function ProductDetailPage({ params }: Props) {
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }} />
 
       <div className="utility-bar">
         <div className="shell utility-inner">

@@ -49,19 +49,8 @@ const structuredData = {
       itemListElement: catalogProducts.map((product, index) => ({
         "@type": "ListItem",
         position: index + 1,
-        item: {
-          "@type": "Product",
-          name: product.fullTitle,
-          description: product.description,
-          category: product.category,
-          url: `https://tinkontech.com/products/${product.slug}`,
-          image: `https://tinkontech.com${product.image}`,
-          brand: { "@id": "#organization" },
-          audience: {
-            "@type": "BusinessAudience",
-            audienceType: "Distributors and wholesalers",
-          },
-        },
+        name: product.fullTitle,
+        url: `https://tinkontech.com/products/${product.slug}`,
       })),
     },
   ],
@@ -72,7 +61,7 @@ export default function Home() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }}
       />
 
       <div className="utility-bar">
