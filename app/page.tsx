@@ -144,6 +144,7 @@ export default function Home() {
                   alt="Hidden armrest storage box for Tesla vehicles"
                   width="800"
                   height="800"
+                  sizes="(max-width: 820px) 50vw, 25vw"
                   priority
                 />
                 <Image
@@ -151,6 +152,7 @@ export default function Home() {
                   alt="Under-seat storage box set for Tesla Model YL"
                   width="800"
                   height="800"
+                  sizes="(max-width: 820px) 50vw, 25vw"
                   priority
                 />
                 <Image
@@ -158,6 +160,7 @@ export default function Home() {
                   alt="Dual-layer under-screen storage tray"
                   width="800"
                   height="800"
+                  sizes="(max-width: 820px) 50vw, 25vw"
                   priority
                 />
                 <Image
@@ -165,6 +168,7 @@ export default function Home() {
                   alt="Tempered glass screen protector kit for Tesla displays"
                   width="800"
                   height="800"
+                  sizes="(max-width: 820px) 50vw, 25vw"
                   priority
                 />
               </div>
@@ -211,6 +215,7 @@ export default function Home() {
                       alt={product.imageAlt}
                       width="900"
                       height="640"
+                      sizes="(max-width: 580px) 100vw, (max-width: 1050px) 50vw, (max-width: 1288px) 33vw, 412px"
                     />
                     <span>{String(index + 1).padStart(2, "0")}</span>
                   </div>
@@ -263,6 +268,7 @@ export default function Home() {
                 alt="TINKON hidden armrest storage box compatible with multiple Tesla models"
                 width="800"
                 height="800"
+                sizes="(max-width: 820px) 100vw, (max-width: 1288px) 50vw, 620px"
               />
               <div className="image-caption">MODEL 3 / MODEL Y / MODEL YL</div>
             </div>
@@ -358,6 +364,7 @@ export default function Home() {
               alt="TINKON silicone cup holder inserts in multiple colors"
               width="800"
               height="800"
+              sizes="(max-width: 820px) 100vw, (max-width: 1288px) 50vw, 620px"
             />
           </div>
         </section>
