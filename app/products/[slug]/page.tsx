@@ -22,11 +22,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
-  const description = `${product.description} Wholesale enquiries and OEM/ODM customization from TINKON.`;
+  const description = product.seoDescription ?? `${product.description} Wholesale enquiries and OEM/ODM customization from TINKON.`;
   const url = `https://tinkontech.com/products/${product.slug}`;
 
   return {
-    title: `${product.name} | TINKON Wholesale`,
+    title: product.seoTitle ?? `${product.name} | TINKON Wholesale`,
     description,
     keywords: product.keywords,
     alternates: { canonical: url },

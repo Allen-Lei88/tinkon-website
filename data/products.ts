@@ -4,6 +4,8 @@ export type Product = {
   slug: string;
   name: string;
   fullTitle: string;
+  seoTitle?: string;
+  seoDescription?: string;
   category: string;
   model?: string;
   description: string;
@@ -653,6 +655,8 @@ export const products: Product[] = [
     slug: "tesla-model-3-y-retractable-console-charging-hub",
     name: "Retractable Console Charging Hub",
     fullTitle: "Retractable Center Console Charging Hub for Tesla Model 3 and Model Y with Sliding Cover",
+    seoTitle: "Tesla Model 3 & Y Retractable Charging Hub | TINKON",
+    seoDescription: "Source a Tesla Model 3 and Model Y console charging hub with retractable cables, USB-A and USB-C ports, and a sliding cover. OEM enquiries welcome.",
     category: "Vehicle Charging & Accessories",
     description: "A console-mounted charging accessory with two retractable cables, USB-A and USB-C ports, a sliding cover and integrated ambient lighting for compatible Tesla interiors.",
     features: ["Two integrated retractable charging cables", "USB-A and USB-C charging ports", "Sliding cover conceals the ports", "Ambient and console lighting modes", "Charging-only function with no data transfer"],
@@ -680,6 +684,8 @@ export const products: Product[] = [
     slug: "tesla-model-3-y-rear-vent-charging-hub",
     name: "Rear Vent Charging Hub",
     fullTitle: "Rear Air Vent Cover with Retractable Charging Cables for Tesla Model 3 and Model Y",
+    seoTitle: "Tesla Model 3 & Y Rear Vent Charging Hub | TINKON",
+    seoDescription: "Review a Tesla Model 3 and Model Y rear vent cover with two retractable charging cables. Confirm vehicle layout, power connection and cable options.",
     category: "Vehicle Charging & Accessories",
     description: "A rear-console accessory combining a honeycomb air-vent cover with two retractable charging cables for compatible Tesla rear-seat layouts.",
     features: ["Honeycomb cover around the rear air vent", "Two integrated retractable charging cables", "Five selectable cable-length positions", "Supplier-listed extension up to 80 cm", "Four-corner clip-on fixing", "USB-C + Lightning and dual USB-C configurations"],
@@ -693,6 +699,8 @@ export const products: Product[] = [
     slug: "tesla-model-3-y-glovebox-usb-hub",
     name: "Glovebox USB Hub",
     fullTitle: "4-Port Glovebox USB Hub with USB-A and USB-C Expansion for Tesla Model 3 and Model Y",
+    seoTitle: "Tesla Model 3 & Y Glovebox USB Hub | TINKON",
+    seoDescription: "Wholesale 4-port glovebox USB hub for compatible Tesla Model 3 and Model Y layouts, with three USB-A ports and one USB-C port. OEM enquiries welcome.",
     category: "Vehicle Charging & Accessories",
     description: "A compact glovebox expansion hub with three USB-A ports and one USB-C port, designed to connect through the existing glovebox USB socket in compatible vehicle layouts.",
     features: ["Three USB-A ports plus one USB-C port", "Direct glovebox USB connection", "Compact black flocked housing", "Supplier-listed data and charging support", "OEM logo and packaging requests available"],
@@ -706,6 +714,8 @@ export const products: Product[] = [
     slug: "obd-usb-car-charger",
     name: "OBD USB Car Charger",
     fullTitle: "OBD Car Charger with USB-C or USB-A + USB-C Port Options",
+    seoTitle: "OBD USB Car Charger | Wholesale & OEM | TINKON",
+    seoDescription: "Wholesale OBD USB car charger with single USB-C or dual USB-A and USB-C options. Confirm connector fit, electrical compatibility and output before order.",
     category: "Vehicle Charging & Accessories",
     description: "A compact OBD-port charging accessory offered in single USB-C and dual USB-A + USB-C configurations for compatible vehicle electrical systems.",
     features: ["Single USB-C and dual-port configurations", "Compact black ABS housing", "Direct connection to a compatible OBD socket", "Alternative charging location for neater cable routing", "OEM logo and packaging requests can be reviewed"],
@@ -746,6 +756,8 @@ export const products: Product[] = [
     slug: "bmw-x1-ix1-integrated-display-screen-protector",
     name: "BMW X1 / iX1 Display Protector",
     fullTitle: "Integrated Display Tempered Glass Screen Protector for BMW X1 2023–2024 and iX1 2023",
+    seoTitle: "BMW X1 & iX1 Screen Protector | Wholesale | TINKON",
+    seoDescription: "Wholesale one-piece tempered glass screen protector for compatible BMW X1 and iX1 integrated displays. Confirm model year and screen shape before ordering.",
     category: "Automotive Screen Protectors",
     model: "TK-SP-BMW-X1-01",
     description: "A one-piece tempered glass protector shaped for the integrated instrument and center display used in compatible BMW X1 and iX1 interiors.",
@@ -976,6 +988,8 @@ export const products: Product[] = [
     slug: "tesla-cybertruck-panoramic-roof-sunshade",
     name: "Cybertruck Panoramic Roof Sunshade",
     fullTitle: "Foldable Panoramic Roof Sunshade for Tesla Cybertruck with Storage Bag",
+    seoTitle: "Tesla Cybertruck Roof Sunshade | Wholesale | TINKON",
+    seoDescription: "Wholesale foldable panoramic roof sunshade for compatible Tesla Cybertruck vehicles, supplied with a storage bag. Confirm roof dimensions and clips before order.",
     category: "Tesla Interior Protection",
     description: "A foldable interior shade for the panoramic glass roof of compatible Tesla Cybertruck vehicles, offered in black and light-color options with a storage bag.",
     features: ["Panoramic glass-roof coverage", "Black and light-color options", "Foldable flexible-frame design", "Clip attachment shown", "OEM logo and packaging requests available"],

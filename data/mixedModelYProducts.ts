@@ -4,6 +4,8 @@ type MixedModelYSource = {
   slug: string;
   name: string;
   fullTitle: string;
+  seoTitle?: string;
+  seoDescription?: string;
   category: "Tesla Storage & Organization" | "Tesla Interior Protection" | "Tesla Exterior Protection";
   option: string;
   material: string;
@@ -124,6 +126,8 @@ const sourceProducts: MixedModelYSource[] = [
     slug: "tesla-model-y-trunk-side-storage-set-large-lids",
     name: "Trunk Storage Set with Large Lids",
     fullTitle: "Trunk Side Storage Set with 2 Bins and 2 Large Lids for Tesla Model Y",
+    seoTitle: "Tesla Model Y Trunk Side Storage Set | TINKON",
+    seoDescription: "Wholesale Tesla Model Y trunk side storage set with two bins and two large lids. Confirm vehicle version, compartment shape and sample fit before order.",
     category: "Tesla Storage & Organization",
     option: "2 bins + 2 large lids",
     material: "To be confirmed",
@@ -189,6 +193,8 @@ const sourceProducts: MixedModelYSource[] = [
     slug: "tesla-model-y-yl-split-front-insect-screens",
     name: "Split Front Insect Screens",
     fullTitle: "Split Front Insect Screen Set for Tesla Model Y and Model YL",
+    seoTitle: "Tesla Model Y & YL Front Insect Screens | TINKON",
+    seoDescription: "Wholesale split front insect screen set for compatible Tesla Model Y and Model YL openings. Confirm vehicle version, positions and mounting method before order.",
     category: "Tesla Exterior Protection",
     option: "Split screen set with pry tool",
     material: "To be confirmed",
@@ -478,6 +484,8 @@ export const mixedModelYProducts: Product[] = sourceProducts.map((source) => ({
   slug: source.slug,
   name: source.name,
   fullTitle: source.fullTitle,
+  seoTitle: source.seoTitle,
+  seoDescription: source.seoDescription,
   category: source.category,
   description: `A supplier-referenced ${source.name.toLowerCase()}, supplied as ${source.option.toLowerCase()}, for compatible Tesla vehicles.`,
   features: [
