@@ -154,7 +154,7 @@ export default function ProductsPage() {
                           alt={product.imageAlt}
                           width={800}
                           height={800}
-                          sizes="(max-width: 760px) 100vw, (max-width: 1100px) 50vw, 33vw"
+                          sizes="(max-width: 580px) 100vw, (max-width: 1050px) 50vw, (max-width: 1288px) 33vw, 400px"
                         />
                       </Link>
                       <div className="catalog-card-copy">
