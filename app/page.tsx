@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { getProductCategoryByName } from "@/data/productCategories";
 import { categories, featuredProducts as products, products as catalogProducts } from "@/data/products";
+import { getWhatsAppUrl, WHATSAPP_DISPLAY } from "@/lib/contact";
 
 const advantages = [
   {
@@ -42,6 +43,13 @@ const structuredData = {
       url: "https://tinkontech.com",
       logo: "https://tinkontech.com/tinkon-logo.png",
       email: "allen@tinkontech.com",
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "sales enquiries",
+        telephone: "+8613609699577",
+        url: getWhatsAppUrl(),
+        availableLanguage: ["English"],
+      },
     },
     {
       "@type": "ItemList",
@@ -100,6 +108,7 @@ export default function Home() {
               <a href="#standards">Markets</a>
               <a href="#process">How it works</a>
               <a href="#inquiry">Wholesale enquiry</a>
+              <a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer">WhatsApp</a>
             </div>
           </details>
         </div>
@@ -379,9 +388,14 @@ export default function Home() {
                 estimated order volume. We’ll use it to prepare a focused
                 wholesale range.
               </p>
-              <a className="direct-email" href="mailto:allen@tinkontech.com">
-                allen@tinkontech.com <span aria-hidden="true">↗</span>
-              </a>
+              <div className="direct-contact-links">
+                <a className="direct-email" href="mailto:allen@tinkontech.com">
+                  allen@tinkontech.com <span aria-hidden="true">↗</span>
+                </a>
+                <a className="direct-whatsapp" href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer">
+                  WhatsApp {WHATSAPP_DISPLAY} <span aria-hidden="true">↗</span>
+                </a>
+              </div>
             </div>
             <form
               className="inquiry-form"
@@ -444,6 +458,7 @@ export default function Home() {
           <div className="footer-links">
             <a href="https://tinkontech.com">tinkontech.com</a>
             <a href="mailto:allen@tinkontech.com">allen@tinkontech.com</a>
+            <a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer">WhatsApp {WHATSAPP_DISPLAY}</a>
             <Link href="/products">Products</Link>
             <a href="#capabilities">B2B support</a>
             <a href="#standards">Markets</a>

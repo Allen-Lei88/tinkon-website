@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { getProductCategoryByName } from "@/data/productCategories";
 import { getProductGallery } from "@/data/productGalleries";
 import { getProduct, products } from "@/data/products";
+import { getWhatsAppUrl, WHATSAPP_DISPLAY } from "@/lib/contact";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -55,6 +56,9 @@ export default async function ProductDetailPage({ params }: Props) {
   if (!categoryInfo) notFound();
   const productUrl = `https://tinkontech.com/products/${product.slug}`;
   const categoryUrl = `https://tinkontech.com/products/category/${categoryInfo.slug}`;
+  const productWhatsAppUrl = getWhatsAppUrl(
+    `Hello TINKON, I'm interested in ${product.name}. Please send me wholesale information.`,
+  );
 
   const related = products
     .filter((item) => item.category === product.category && item.slug !== product.slug)
@@ -134,9 +138,14 @@ export default async function ProductDetailPage({ params }: Props) {
             <ul className="product-feature-list">
               {product.features.map((feature) => <li key={feature}>{feature}</li>)}
             </ul>
-            <a className="button button-primary product-enquiry-button" href={`mailto:allen@tinkontech.com?subject=${encodeURIComponent(`Wholesale enquiry: ${product.name}`)}`}>
-              Enquire about this product <span aria-hidden="true">↗</span>
-            </a>
+            <div className="product-contact-actions">
+              <a className="button button-primary" href={`mailto:allen@tinkontech.com?subject=${encodeURIComponent(`Wholesale enquiry: ${product.name}`)}`}>
+                Email enquiry <span aria-hidden="true">↗</span>
+              </a>
+              <a className="button button-whatsapp" href={productWhatsAppUrl} target="_blank" rel="noopener noreferrer">
+                WhatsApp us <span aria-hidden="true">↗</span>
+              </a>
+            </div>
           </div>
         </section>
 
@@ -193,7 +202,10 @@ export default async function ProductDetailPage({ params }: Props) {
             <p className="section-index">WHOLESALE SUPPORT</p>
             <h2>Build this product for your market.</h2>
             <p>Share your target country, vehicle version, preferred packaging and estimated volume. TINKON will coordinate samples, customization and production follow-up.</p>
-            <a className="text-link" href={`mailto:allen@tinkontech.com?subject=${encodeURIComponent(`OEM/ODM request: ${product.name}`)}`}>allen@tinkontech.com <span aria-hidden="true">↗</span></a>
+            <div className="partner-contact-links">
+              <a className="text-link" href={`mailto:allen@tinkontech.com?subject=${encodeURIComponent(`OEM/ODM request: ${product.name}`)}`}>allen@tinkontech.com <span aria-hidden="true">↗</span></a>
+              <a className="text-link" href={productWhatsAppUrl} target="_blank" rel="noopener noreferrer">WhatsApp {WHATSAPP_DISPLAY} <span aria-hidden="true">↗</span></a>
+            </div>
           </div>
         </section>
 
@@ -226,7 +238,7 @@ export default async function ProductDetailPage({ params }: Props) {
         <div className="shell footer-main catalog-footer">
           <Link className="brand brand-footer" href="/"><Image className="brand-logo" src="/tinkon-logo.png" alt="" width={52} height={52} /><span className="brand-copy"><span className="brand-word">TINKON</span><span className="brand-tag">GLOBAL SUPPLY</span></span></Link>
           <p>Dongguan TinKon Technology Co., Ltd. — OEM and ODM accessories for global B2B buyers.</p>
-          <div className="footer-links"><Link href="/products">All products</Link><a href="mailto:allen@tinkontech.com">allen@tinkontech.com</a></div>
+          <div className="footer-links"><Link href="/products">All products</Link><a href="mailto:allen@tinkontech.com">allen@tinkontech.com</a><a href={productWhatsAppUrl} target="_blank" rel="noopener noreferrer">WhatsApp {WHATSAPP_DISPLAY}</a></div>
         </div>
       </footer>
     </>

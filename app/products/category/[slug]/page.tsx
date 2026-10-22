@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getProductCategoryBySlug, productCategories } from "@/data/productCategories";
 import { products } from "@/data/products";
+import { getWhatsAppUrl, WHATSAPP_DISPLAY } from "@/lib/contact";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -57,6 +58,9 @@ export default async function ProductCategoryPage({ params }: Props) {
   if (categoryProducts.length === 0) notFound();
 
   const categoryUrl = `https://tinkontech.com/products/category/${category.slug}`;
+  const categoryWhatsAppUrl = getWhatsAppUrl(
+    `Hello TINKON, I'm interested in your ${category.name} range. Please send me wholesale information.`,
+  );
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
@@ -178,12 +182,17 @@ export default async function ProductCategoryPage({ params }: Props) {
             <ul>
               {category.sourcingNotes.map((note) => <li key={note}>{note}</li>)}
             </ul>
-            <a
-              className="button button-primary"
-              href={`mailto:allen@tinkontech.com?subject=${encodeURIComponent(`Wholesale range request: ${category.name}`)}`}
-            >
-              Request this product range <span aria-hidden="true">↗</span>
-            </a>
+            <div className="category-contact-actions">
+              <a
+                className="button button-primary"
+                href={`mailto:allen@tinkontech.com?subject=${encodeURIComponent(`Wholesale range request: ${category.name}`)}`}
+              >
+                Email range request <span aria-hidden="true">↗</span>
+              </a>
+              <a className="button button-whatsapp" href={categoryWhatsAppUrl} target="_blank" rel="noopener noreferrer">
+                WhatsApp us <span aria-hidden="true">↗</span>
+              </a>
+            </div>
           </div>
         </section>
       </main>
@@ -198,6 +207,7 @@ export default async function ProductCategoryPage({ params }: Props) {
           <div className="footer-links">
             <Link href="/products">All products</Link>
             <a href="mailto:allen@tinkontech.com">allen@tinkontech.com</a>
+            <a href={categoryWhatsAppUrl} target="_blank" rel="noopener noreferrer">WhatsApp {WHATSAPP_DISPLAY}</a>
           </div>
         </div>
       </footer>

@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { getProductCategoryByName } from "@/data/productCategories";
 import { categories, products } from "@/data/products";
+import { getWhatsAppUrl, WHATSAPP_DISPLAY } from "@/lib/contact";
 
 export const metadata: Metadata = {
   title: "Wholesale EV & Tesla Accessories | TINKON",
@@ -201,6 +202,7 @@ export default function ProductsPage() {
           <div className="footer-links">
             <Link href="/">Home</Link>
             <a href="mailto:allen@tinkontech.com">allen@tinkontech.com</a>
+            <a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer">WhatsApp {WHATSAPP_DISPLAY}</a>
           </div>
         </div>
       </footer>
