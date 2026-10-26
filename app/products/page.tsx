@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import MobileNavigation from "@/components/MobileNavigation";
 import { getProductCategoryByName } from "@/data/productCategories";
 import { categories, products } from "@/data/products";
 import { getWhatsAppUrl, WHATSAPP_DISPLAY } from "@/lib/contact";
@@ -90,6 +91,13 @@ export default function ProductsPage() {
           <a className="nav-cta" href="mailto:allen@tinkontech.com?subject=TINKON%20Product%20Enquiry">
             Request a quotation <span aria-hidden="true">↗</span>
           </a>
+          <MobileNavigation>
+            <Link href="/">Home</Link>
+            <a href="#categories">Categories</a>
+            <a href="#downloads">Download catalogs</a>
+            <a href="mailto:allen@tinkontech.com?subject=TINKON%20Product%20Enquiry">Request a quotation</a>
+            <a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          </MobileNavigation>
         </div>
       </header>
 
