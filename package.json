@@ -9,10 +9,10 @@
     "dev": "next dev",
     "build": "next build --webpack",
     "start": "next start",
-    "test": "next build",
+    "test": "npm run build && node --test tests/rendered-html.test.mjs",
     "dev:sites": "WRANGLER_LOG_PATH=.wrangler/wrangler.log vinext dev",
     "build:sites": "WRANGLER_LOG_PATH=.wrangler/wrangler.log vinext build",
-    "test:sites": "npm run build:sites && node --test tests/rendered-html.test.mjs",
+    "test:sites": "npm run build:sites && TEST_TARGET=sites node --test tests/rendered-html.test.mjs",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
     "db:generate": "drizzle-kit generate"
   },

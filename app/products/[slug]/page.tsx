@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import MobileNavigation from "@/components/MobileNavigation";
 import { notFound } from "next/navigation";
 import { getProductCategoryByName } from "@/data/productCategories";
 import { getProductGallery } from "@/data/productGalleries";
@@ -116,6 +117,13 @@ export default async function ProductDetailPage({ params }: Props) {
           <a className="nav-cta" href={`mailto:allen@tinkontech.com?subject=${encodeURIComponent(`Enquiry: ${product.name}`)}`}>
             Request a quotation <span aria-hidden="true">↗</span>
           </a>
+          <MobileNavigation>
+            <Link href="/">Home</Link>
+            <Link href="/products">All products</Link>
+            <Link href={`/products/category/${categoryInfo.slug}`}>{product.category}</Link>
+            <a href={`mailto:allen@tinkontech.com?subject=${encodeURIComponent(`Enquiry: ${product.name}`)}`}>Request a quotation</a>
+            <a href={productWhatsAppUrl} target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          </MobileNavigation>
         </div>
       </header>
 
@@ -168,7 +176,7 @@ export default async function ProductDetailPage({ params }: Props) {
                         alt={`${product.imageAlt} - additional view ${index + 2}`}
                         width={800}
                         height={800}
-                        sizes="(max-width: 580px) 100vw, (max-width: 900px) 50vw, 25vw"
+                        sizes="(max-width: 580px) 100vw, (max-width: 1050px) 50vw, (max-width: 1288px) 25vw, 295px"
                       />
                     </a>
                     <figcaption>Additional view {String(index + 2).padStart(2, "0")}</figcaption>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import MobileNavigation from "@/components/MobileNavigation";
 import { notFound } from "next/navigation";
 import { getProductCategoryBySlug, productCategories } from "@/data/productCategories";
 import { products } from "@/data/products";
@@ -122,6 +123,12 @@ export default async function ProductCategoryPage({ params }: Props) {
           >
             Request a quotation <span aria-hidden="true">↗</span>
           </a>
+          <MobileNavigation>
+            <Link href="/">Home</Link>
+            <Link href="/products">All products</Link>
+            <a href={`mailto:allen@tinkontech.com?subject=${encodeURIComponent(`Wholesale category enquiry: ${category.name}`)}`}>Request a quotation</a>
+            <a href={categoryWhatsAppUrl} target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          </MobileNavigation>
         </div>
       </header>
 

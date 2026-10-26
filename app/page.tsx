@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import MobileNavigation from "@/components/MobileNavigation";
 import { getProductCategoryByName } from "@/data/productCategories";
 import { categories, featuredProducts as products, products as catalogProducts } from "@/data/products";
 import { getWhatsAppUrl, WHATSAPP_DISPLAY } from "@/lib/contact";
@@ -100,17 +101,14 @@ export default function Home() {
             Request wholesale catalog <span aria-hidden="true">↗</span>
           </a>
 
-          <details className="mobile-nav">
-            <summary aria-label="Open navigation">Menu</summary>
-            <div className="mobile-panel">
-              <Link href="/products">Products</Link>
-              <a href="#capabilities">Capabilities</a>
-              <a href="#standards">Markets</a>
-              <a href="#process">How it works</a>
-              <a href="#inquiry">Wholesale enquiry</a>
-              <a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer">WhatsApp</a>
-            </div>
-          </details>
+          <MobileNavigation>
+            <Link href="/products">Products</Link>
+            <a href="#capabilities">Capabilities</a>
+            <a href="#standards">Markets</a>
+            <a href="#process">How it works</a>
+            <a href="#inquiry">Wholesale enquiry</a>
+            <a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          </MobileNavigation>
         </div>
       </header>
 
@@ -435,7 +433,7 @@ export default function Home() {
                 Prepare wholesale enquiry <span aria-hidden="true">↗</span>
               </button>
               <p className="form-note form-wide">
-                Your information is used only to prepare a relevant B2B response.
+                This opens your email app with your enquiry details. Review and send the email there, or contact us directly by email or WhatsApp.
               </p>
             </form>
           </div>

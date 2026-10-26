@@ -22,12 +22,31 @@ npm install
 npm run dev
 ```
 
-Production check:
+Production checks:
 
 ```bash
-npm run build
 npm run lint
+npm test
 ```
+
+`npm test` runs the production Webpack build, then checks its rendered HTML for
+all catalog products and categories. Coverage includes unique product/category
+lists, canonical URLs, quote-only structured data, mobile navigation, local
+links/anchors/assets, and the enquiry form's email-app instructions. Product
+and category URLs are discovered from the rendered catalog rather than a
+hard-coded count. The checks do not send enquiries or contact external links.
+
+To rerun the HTML checks against an existing production build:
+
+```bash
+node --test tests/rendered-html.test.mjs
+```
+
+For a configured Sites checkout, `npm run test:sites` builds with vinext and runs
+the same checks against the worker renderer (`TEST_TARGET=sites`). This path
+requires the checkout's Sites hosting configuration; it does not deploy.
+Browser checks are still needed for responsive layout, keyboard interaction,
+menu dismissal, and Back/Forward behavior.
 
 ## Product updates
 
