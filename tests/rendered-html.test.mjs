@@ -126,6 +126,23 @@ test("all product categories partition the catalog without missing or repeated p
   assert.deepEqual(categorized.sort(), [...productPaths].sort());
 });
 
+test("every product category includes a distinct, useful wholesale buyer guide", async () => {
+  const questionSets = [];
+  for (const path of categoryPaths) {
+    const html = await render(path);
+    const guide = elementByClass(html, "section", "category-buyer-guide");
+    assert.ok(guide, `${path} needs a wholesale buyer guide`);
+    assert.match(guide, /WHOLESALE BUYER GUIDE/);
+    const questions = [...guide.matchAll(/<summary\b[^>]*>[\s\S]*?<span>([\s\S]*?)<\/span>[\s\S]*?<\/summary>/gi)]
+      .map((match) => decodeHtml(match[1].replace(/<[^>]+>/g, "").trim()));
+    assert.equal(questions.length, 3, `${path} needs three buyer questions`);
+    assert.equal(new Set(questions).size, questions.length, `${path} buyer questions must be unique`);
+    assert.equal(tags(guide).filter((tag) => tag.name === "details").length, 3, `${path} buyer answers`);
+    questionSets.push(questions.join("|"));
+  }
+  assert.equal(new Set(questionSets).size, categoryPaths.length, "Category buyer guides must be distinct");
+});
+
 test("all product pages retain quote-only WebPage and matching breadcrumb schema", async () => {
   for (const path of productPaths) {
     const nodes = schemaNodes(await render(path));

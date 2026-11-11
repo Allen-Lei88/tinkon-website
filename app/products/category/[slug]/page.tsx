@@ -176,6 +176,30 @@ export default async function ProductCategoryPage({ params }: Props) {
           </div>
         </section>
 
+        <section className="category-buyer-guide">
+          <div className="shell category-buyer-guide-grid">
+            <div className="category-buyer-guide-heading">
+              <p className="section-index">WHOLESALE BUYER GUIDE</p>
+              <h2>Questions about {category.name}</h2>
+              <p>
+                Use these points to prepare a clearer product enquiry. Exact specifications,
+                fitment and commercial terms remain subject to product review.
+              </p>
+            </div>
+            <div className="category-buyer-questions">
+              {category.buyerQuestions.map(({ question, answer }) => (
+                <details key={question}>
+                  <summary>
+                    <span>{question}</span>
+                    <b aria-hidden="true">+</b>
+                  </summary>
+                  <p>{answer}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section className="category-sourcing-section">
           <div className="shell category-sourcing-grid">
             <div>

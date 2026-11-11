@@ -1294,6 +1294,84 @@ footer {
   background: var(--white);
 }
 
+.category-buyer-guide {
+  padding: 82px 0;
+  background: var(--paper);
+  border-top: 1px solid var(--line);
+}
+
+.category-buyer-guide-grid {
+  display: grid;
+  grid-template-columns: 0.75fr 1.25fr;
+  gap: 88px;
+  align-items: start;
+}
+
+.category-buyer-guide-heading {
+  position: sticky;
+  top: 112px;
+}
+
+.category-buyer-guide-heading h2 {
+  max-width: 560px;
+  margin: 18px 0;
+  font-size: clamp(36px, 4vw, 58px);
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.category-buyer-guide-heading > p:last-child {
+  max-width: 550px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.category-buyer-questions {
+  border-top: 1px solid var(--ink);
+}
+
+.category-buyer-questions details {
+  border-bottom: 1px solid var(--line);
+}
+
+.category-buyer-questions summary {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: center;
+  padding: 24px 0;
+  cursor: pointer;
+  list-style: none;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.category-buyer-questions summary::-webkit-details-marker {
+  display: none;
+}
+
+.category-buyer-questions summary b {
+  color: var(--green-dark);
+  font-size: 24px;
+  line-height: 1;
+  transition: transform 180ms ease;
+}
+
+.category-buyer-questions details[open] summary b {
+  transform: rotate(45deg);
+}
+
+.category-buyer-questions details > p {
+  max-width: 780px;
+  margin: -4px 48px 24px 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
 .category-sourcing-section {
   padding: 82px 0;
   background: var(--green);
@@ -2094,6 +2172,10 @@ footer {
     gap: 42px;
   }
 
+  .category-buyer-guide-grid {
+    gap: 48px;
+  }
+
   .category-sourcing-grid .button {
     justify-self: start;
   }
@@ -2103,6 +2185,7 @@ footer {
   .catalog-hero-grid,
   .catalog-downloads-grid,
   .category-page-hero,
+  .category-buyer-guide-grid,
   .product-detail-hero,
   .product-spec-grid,
   .category-sourcing-grid {
@@ -2113,6 +2196,7 @@ footer {
   .catalog-section,
   .catalog-downloads,
   .category-product-section,
+  .category-buyer-guide,
   .category-sourcing-section,
   .product-spec-section,
   .related-products {
@@ -2123,6 +2207,10 @@ footer {
   .category-page-hero {
     padding-top: 46px;
     padding-bottom: 60px;
+  }
+
+  .category-buyer-guide-heading {
+    position: static;
   }
 
   .catalog-category-nav {
