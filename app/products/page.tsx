@@ -4,7 +4,7 @@ import Link from "next/link";
 import MobileNavigation from "@/components/MobileNavigation";
 import { getProductCategoryByName } from "@/data/productCategories";
 import { categories, products } from "@/data/products";
-import { getWhatsAppUrl, WHATSAPP_DISPLAY } from "@/lib/contact";
+import { COMPANY_ADDRESS_EN, getWhatsAppUrl, WHATSAPP_DISPLAY } from "@/lib/contact";
 
 export const metadata: Metadata = {
   title: "Wholesale EV & Tesla Accessories | TINKON",
@@ -206,7 +206,10 @@ export default function ProductsPage() {
             <Image className="brand-logo" src="/tinkon-logo.png" alt="" width={52} height={52} />
             <span className="brand-copy"><span className="brand-word">TINKON</span><span className="brand-tag">GLOBAL SUPPLY</span></span>
           </Link>
-          <p>OEM and ODM accessories for global distributors, importers and private-label brands.</p>
+          <p>
+            OEM and ODM accessories for global distributors, importers and private-label brands.
+            <span className="company-address">{COMPANY_ADDRESS_EN}</span>
+          </p>
           <div className="footer-links">
             <Link href="/">Home</Link>
             <a href="mailto:allen@tinkontech.com">allen@tinkontech.com</a>

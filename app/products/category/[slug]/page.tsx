@@ -5,7 +5,7 @@ import MobileNavigation from "@/components/MobileNavigation";
 import { notFound } from "next/navigation";
 import { getProductCategoryBySlug, productCategories } from "@/data/productCategories";
 import { products } from "@/data/products";
-import { getWhatsAppUrl, WHATSAPP_DISPLAY } from "@/lib/contact";
+import { COMPANY_ADDRESS_EN, getWhatsAppUrl, WHATSAPP_DISPLAY } from "@/lib/contact";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -210,7 +210,10 @@ export default async function ProductCategoryPage({ params }: Props) {
             <Image className="brand-logo" src="/tinkon-logo.png" alt="" width={52} height={52} />
             <span className="brand-copy"><span className="brand-word">TINKON</span><span className="brand-tag">GLOBAL SUPPLY</span></span>
           </Link>
-          <p>Dongguan TinKon Technology Co., Ltd. — OEM and ODM accessories for global B2B buyers.</p>
+          <p>
+            Dongguan TinKon Technology Co., Ltd. — OEM and ODM accessories for global B2B buyers.
+            <span className="company-address">{COMPANY_ADDRESS_EN}</span>
+          </p>
           <div className="footer-links">
             <Link href="/products">All products</Link>
             <a href="mailto:allen@tinkontech.com">allen@tinkontech.com</a>

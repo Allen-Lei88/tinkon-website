@@ -872,6 +872,15 @@ textarea {
   justify-items: start;
 }
 
+.direct-address {
+  max-width: 470px;
+  margin-top: 24px;
+  color: var(--muted);
+  font-size: 13px;
+  font-style: normal;
+  line-height: 1.65;
+}
+
 .direct-whatsapp {
   display: inline-flex;
   align-items: center;
@@ -1713,6 +1722,13 @@ footer {
   color: #aeb5b2;
   font-size: 14px;
   line-height: 1.7;
+}
+
+.company-address {
+  display: block;
+  margin-top: 12px;
+  color: #858d89;
+  font-style: normal;
 }
 
 .footer-links {

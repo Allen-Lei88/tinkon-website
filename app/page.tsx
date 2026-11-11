@@ -3,7 +3,12 @@ import Link from "next/link";
 import MobileNavigation from "@/components/MobileNavigation";
 import { getProductCategoryByName } from "@/data/productCategories";
 import { categories, featuredProducts as products, products as catalogProducts } from "@/data/products";
-import { getWhatsAppUrl, WHATSAPP_DISPLAY } from "@/lib/contact";
+import {
+  COMPANY_ADDRESS_EN,
+  COMPANY_STRUCTURED_ADDRESS,
+  getWhatsAppUrl,
+  WHATSAPP_DISPLAY,
+} from "@/lib/contact";
 
 const advantages = [
   {
@@ -44,6 +49,7 @@ const structuredData = {
       url: "https://tinkontech.com",
       logo: "https://tinkontech.com/tinkon-logo.png",
       email: "allen@tinkontech.com",
+      address: COMPANY_STRUCTURED_ADDRESS,
       contactPoint: {
         "@type": "ContactPoint",
         contactType: "sales enquiries",
@@ -394,6 +400,7 @@ export default function Home() {
                   WhatsApp {WHATSAPP_DISPLAY} <span aria-hidden="true">↗</span>
                 </a>
               </div>
+              <address className="direct-address">{COMPANY_ADDRESS_EN}</address>
             </div>
             <form
               className="inquiry-form"
@@ -452,6 +459,7 @@ export default function Home() {
           <p>
             Dongguan TinKon Technology Co., Ltd. — OEM and ODM electric vehicle
             accessories for global distributors, importers and private-label brands.
+            <span className="company-address">{COMPANY_ADDRESS_EN}</span>
           </p>
           <div className="footer-links">
             <a href="https://tinkontech.com">tinkontech.com</a>
