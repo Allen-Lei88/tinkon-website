@@ -236,7 +236,7 @@ export const productCategories: ProductCategoryInfo[] = [
     metaDescription:
       "Browse TINKON wholesale automotive tempered-glass screen protectors for selected Tesla, BMW, BYD, Geely and other vehicle displays.",
     intro:
-      "Build a vehicle-specific automotive screen protector range for selected center, instrument and rear displays. Screen size, outline, model year, finish and installation-kit requirements are confirmed before quotation to reduce fitment risk.",
+      "Build a wholesale automotive screen protector range for selected center, instrument and rear displays. Screen size, outline, model year, finish and installation-kit requirements are confirmed before quotation to reduce fitment risk.",
     sourcingNotes: [
       "Display size and outline matched to the exact vehicle version",
       "Clear, matte and other finishes require SKU confirmation",
@@ -254,9 +254,9 @@ export const productCategories: ProductCategoryInfo[] = [
           "Finish options are SKU-specific and may differ by display application. Buyers should confirm the required finish, installation kit and packaging for each vehicle version.",
       },
       {
-        question: "Can TINKON prepare private-label installation kits?",
+        question: "What should buyers provide for a wholesale automotive screen protector quotation?",
         answer:
-          "Private-label packaging, instructions and installation-kit configurations can be reviewed. Final contents depend on the chosen protector and channel requirements.",
+          "Share the vehicle make, model, model year, market version, display position, required finish, expected volume and packaging needs. Private-label packaging, instructions and installation-kit configurations can then be reviewed for the selected protector.",
       },
     ],
   },

@@ -265,7 +265,14 @@ export default function Home() {
               </div>
             </div>
             <div className="catalog-callout">
-              <p>Explore the complete range, including EV storage, interior and exterior protection, charging, holders and automotive screen protection.</p>
+              <p>
+                Explore the complete range, including EV storage, interior and exterior protection,
+                charging, holders and{" "}
+                <Link href="/products/category/automotive-screen-protectors">
+                  wholesale automotive screen protectors
+                </Link>
+                .
+              </p>
               <Link className="button button-primary" href="/products">
                 Explore more products <span aria-hidden="true">↗</span>
               </Link>
