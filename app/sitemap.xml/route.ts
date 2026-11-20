@@ -10,19 +10,35 @@ function escapeXml(value: string) {
     .replaceAll("'", "&apos;");
 }
 
-function sitemapEntry(url: string) {
+type SitemapUrl = {
+  url: string;
+  lastModified?: string;
+};
+
+function sitemapEntry({ url, lastModified }: SitemapUrl) {
+  const lastModifiedEntry = lastModified
+    ? `\n    <lastmod>${escapeXml(lastModified)}</lastmod>`
+    : "";
   return `  <url>
-    <loc>${escapeXml(url)}</loc>
+    <loc>${escapeXml(url)}</loc>${lastModifiedEntry}
   </url>`;
 }
 
 export async function GET() {
   const origin = "https://tinkontech.com";
+  // Keep these dates tied to significant, verified page changes. Do not stamp
+  // every build as a fresh update: Google can ignore inaccurate lastmod data.
+  const homepageLastModified = "2026-11-11";
+  const catalogLastModified = "2026-10-20";
+  const categoryLastModified = "2026-11-11";
   const urls = [
-    origin,
-    `${origin}/products`,
-    ...productCategories.map((category) => `${origin}/products/category/${category.slug}`),
-    ...products.map((product) => `${origin}/products/${product.slug}`),
+    { url: origin, lastModified: homepageLastModified },
+    { url: `${origin}/products`, lastModified: catalogLastModified },
+    ...productCategories.map((category) => ({
+      url: `${origin}/products/category/${category.slug}`,
+      lastModified: categoryLastModified,
+    })),
+    ...products.map((product) => ({ url: `${origin}/products/${product.slug}` })),
   ];
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
