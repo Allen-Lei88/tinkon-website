@@ -14,7 +14,7 @@ export const COMPANY_STRUCTURED_ADDRESS = {
 } as const;
 
 export const DEFAULT_WHATSAPP_MESSAGE =
-  "Hello TINKON, I'm interested in your EV accessories. Please send me more information.";
+  "Hello TINKON, I'm interested in your car organizers and automotive storage accessories. Please send me more information.";
 
 export function getWhatsAppUrl(message = DEFAULT_WHATSAPP_MESSAGE) {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;

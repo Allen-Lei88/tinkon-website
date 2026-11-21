@@ -45,7 +45,7 @@ const structuredData = {
       name: "TINKON",
       legalName: "Dongguan TinKon Technology Co., Ltd.",
       description:
-        "OEM and ODM electric vehicle accessories supplier for global distributors, importers and private-label brands.",
+        "OEM and ODM car organizer and automotive storage accessory supplier for global distributors, importers and private-label brands.",
       url: "https://tinkontech.com",
       logo: "https://tinkontech.com/tinkon-logo.png",
       email: "allen@tinkontech.com",
@@ -60,7 +60,7 @@ const structuredData = {
     },
     {
       "@type": "ItemList",
-      name: "TINKON wholesale electric vehicle accessories",
+      name: "TINKON wholesale car organizers and EV accessories",
       itemListElement: catalogProducts.map((product, index) => ({
         "@type": "ListItem",
         position: index + 1,
@@ -81,7 +81,7 @@ export default function Home() {
 
       <div className="utility-bar">
         <div className="shell utility-inner">
-          <span>TINKON · EV ACCESSORIES · WHOLESALE · OEM / ODM</span>
+          <span>TINKON · CAR ORGANIZERS · WHOLESALE · OEM / ODM</span>
           <a href="#inquiry">Global distributor enquiries ↗</a>
         </div>
       </div>
@@ -124,20 +124,20 @@ export default function Home() {
             <div className="hero-copy">
               <div className="eyebrow">
                 <span className="eyebrow-dot" aria-hidden="true" />
-                Dongguan-based export sourcing partner
+                Dongguan-based car organizer supply partner
               </div>
               <h1>
-                Better EV accessories.
+                Wholesale car organizers.
                 <span>Ready for your market.</span>
               </h1>
               <p className="hero-lede">
                 TINKON helps distributors, importers and automotive accessory
-                brands source, customize and launch professional Tesla and EV
-                accessories for overseas markets.
+                brands source, customize and launch model-specific car organizers
+                and storage accessories for overseas markets.
               </p>
               <div className="hero-actions">
                 <Link className="button button-primary" href="/products">
-                  Explore more products <span aria-hidden="true">↗</span>
+                  Explore car organizers <span aria-hidden="true">↗</span>
                 </Link>
                 <a className="text-link" href="#capabilities">
                   Why partner with us <span aria-hidden="true">↗</span>
@@ -145,13 +145,13 @@ export default function Home() {
               </div>
               <div className="hero-proof" aria-label="Key capabilities">
                 <div><strong>OEM</strong><span>Brand & packaging support</span></div>
-                <div><strong>EV</strong><span>Model-focused assortment</span></div>
+                <div><strong>FIT</strong><span>Model-specific organizer range</span></div>
                 <div><strong>B2B</strong><span>Wholesale-first service</span></div>
               </div>
             </div>
 
             <div className="hero-media">
-              <div className="hero-product-grid" aria-label="Selected TINKON Tesla accessories">
+              <div className="hero-product-grid" aria-label="Selected TINKON car organizers">
                 <Image
                   src="/catalog/tesla-hidden-armrest-storage-box.jpg"
                   alt="Hidden armrest storage box for Tesla vehicles"
@@ -177,8 +177,8 @@ export default function Home() {
                   priority
                 />
                 <Image
-                  src="/catalog/tesla-model-y-yl-screen-protector.jpg"
-                  alt="Tempered glass screen protector kit for Tesla displays"
+                  src="/catalog/tesla-center-console-storage-box-set.jpg"
+                  alt="Center console storage box organizer set for Tesla vehicles"
                   width="800"
                   height="800"
                   sizes="(max-width: 820px) 50vw, 25vw"
@@ -186,8 +186,8 @@ export default function Home() {
                 />
               </div>
               <div className="hero-label">
-                <span>TINKON PRODUCT FOCUS / 01</span>
-                <strong>Real products,<br />commercially ready.</strong>
+                <span>TINKON ORGANIZER FOCUS / 01</span>
+                <strong>Useful storage,<br />model-specific fit.</strong>
               </div>
             </div>
           </div>
@@ -209,13 +209,13 @@ export default function Home() {
             <div className="section-heading">
               <div>
                 <p className="section-index">01 / PRODUCT RANGE</p>
-                <h2>One partner.<br />A growing product line.</h2>
+                <h2>One partner.<br />A growing organizer range.</h2>
               </div>
               <p>
-                Build a focused range for retail, e-commerce and automotive
-                distribution. TINKON coordinates sourcing, presentation and
-                export-ready packaging around your market. Browse the growing
-                product range for detailed specifications.
+                Build a focused car-organizer range for retail, e-commerce and
+                automotive distribution. TINKON coordinates model selection,
+                presentation and export-ready packaging around your market.
+                Browse the growing range for detailed specifications.
               </p>
             </div>
 
@@ -266,15 +266,15 @@ export default function Home() {
             </div>
             <div className="catalog-callout">
               <p>
-                Explore the complete range, including EV storage, interior and exterior protection,
-                charging, holders and{" "}
-                <Link href="/products/category/automotive-screen-protectors">
-                  wholesale automotive screen protectors
+                Explore model-specific console trays, seat-gap boxes, under-seat organizers,
+                door-pocket inserts and other{" "}
+                <Link href="/products/category/tesla-storage-organization">
+                  wholesale car organizers
                 </Link>
-                .
+                {" "}for EV markets.
               </p>
-              <Link className="button button-primary" href="/products">
-                Explore more products <span aria-hidden="true">↗</span>
+              <Link className="button button-primary" href="/products/category/tesla-storage-organization">
+                Browse organizer range <span aria-hidden="true">↗</span>
               </Link>
             </div>
           </div>
@@ -294,11 +294,11 @@ export default function Home() {
             </div>
             <div className="standards-copy">
               <p className="section-index">02 / VEHICLE COVERAGE</p>
-              <h2>Built around the EV models buyers search for.</h2>
+              <h2>Storage built around the EV models buyers search for.</h2>
               <p className="large-copy">
-                We focus each product program around real vehicle applications,
-                buyer search behavior and retail-ready combinations—not a random
-                factory catalog.
+                We focus each storage and organization program around real vehicle
+                applications, buyer search behavior and retail-ready combinations—not
+                a random factory catalog.
               </p>
               <div className="standards-list">
                 <span>Tesla Model 3</span>

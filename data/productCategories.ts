@@ -15,11 +15,11 @@ export const productCategories: ProductCategoryInfo[] = [
   {
     name: "Tesla Storage & Organization",
     slug: "tesla-storage-organization",
-    title: "Wholesale Tesla Storage & Organization Accessories",
+    title: "Wholesale Tesla Car Organizers & Storage Accessories",
     metaDescription:
-      "Browse TINKON wholesale Tesla storage organizers, console trays, under-seat boxes and interior storage accessories with OEM and ODM support.",
+      "Browse TINKON wholesale Tesla car organizers, console trays, under-seat boxes and interior storage accessories with OEM and ODM support.",
     intro:
-      "Build a model-focused Tesla storage range with organizers for consoles, dashboards, door pockets, seats and other usable cabin spaces. Each product is reviewed by vehicle version before quotation so distributors can plan a clearer assortment and reduce fitment uncertainty.",
+      "Build a model-focused range of wholesale Tesla car organizers for consoles, dashboards, door pockets, seats and other usable cabin spaces. Each product is reviewed by vehicle version before quotation so distributors can plan a clearer assortment and reduce fitment uncertainty.",
     sourcingNotes: [
       "Vehicle and console version reviewed before sampling",
       "Material, color and set configuration confirmed by SKU",

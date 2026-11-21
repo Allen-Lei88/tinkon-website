@@ -2,23 +2,23 @@ import type { Metadata } from "next";
 import { getWhatsAppUrl, WHATSAPP_DISPLAY } from "@/lib/contact";
 import "./globals.css";
 
-const title = "TINKON | Wholesale Tesla & EV Accessories OEM/ODM";
+const title = "Wholesale Car Organizers & EV Storage Accessories | TINKON";
 const description =
-  "TINKON supplies wholesale Tesla and electric vehicle accessories including storage organizers, sunshades, screen protectors and interior accessories for distributors, importers and private-label brands.";
+  "TINKON supplies model-specific car organizers and automotive storage accessories for distributors, importers and private-label programs with OEM/ODM support.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://tinkontech.com"),
   title,
   description,
   keywords: [
-    "wholesale EV accessories",
-    "Tesla accessories supplier",
-    "Model Y accessories wholesale",
-    "electric vehicle accessories OEM",
-    "EV accessories ODM",
-    "Tesla Model 3 accessories",
-    "Model Y Juniper accessories",
-    "Cybertruck accessories",
+    "wholesale car organizers",
+    "car organizer supplier",
+    "automotive storage accessories",
+    "Tesla storage organizer",
+    "EV car organizers",
+    "center console organizer wholesale",
+    "vehicle-specific storage organizers",
+    "private label car organizers",
   ],
   alternates: { canonical: "/" },
   icons: {
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
         url: "/og.jpg",
         width: 1200,
         height: 630,
-        alt: "TINKON wholesale EV accessories OEM and ODM",
+        alt: "TINKON wholesale car organizers and automotive storage accessories",
       },
     ],
   },

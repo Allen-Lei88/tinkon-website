@@ -7,23 +7,23 @@ import { categories, products } from "@/data/products";
 import { COMPANY_ADDRESS_EN, getWhatsAppUrl, WHATSAPP_DISPLAY } from "@/lib/contact";
 
 export const metadata: Metadata = {
-  title: "Wholesale EV & Tesla Accessories | TINKON",
+  title: "Wholesale Car Organizers & EV Accessories | TINKON",
   description:
-    "Browse TINKON wholesale Tesla and EV accessories for storage, interior and exterior protection, charging, holders and automotive screens. OEM and ODM support available.",
+    "Browse TINKON model-specific car organizers and automotive storage accessories, plus EV protection, charging and interior products with OEM/ODM support.",
   alternates: { canonical: "/products" },
   openGraph: {
     type: "website",
     url: "/products",
     siteName: "TINKON",
-    title: "Wholesale EV & Tesla Accessories | TINKON",
+    title: "Wholesale Car Organizers & EV Accessories | TINKON",
     description:
-      "Browse TINKON wholesale Tesla and EV accessories for storage, interior and exterior protection, charging, holders and automotive screens. OEM and ODM support available.",
+      "Browse TINKON model-specific car organizers and automotive storage accessories, plus EV protection, charging and interior products with OEM/ODM support.",
     images: [
       {
         url: "/og.jpg",
         width: 1200,
         height: 630,
-        alt: "TINKON wholesale Tesla and electric vehicle accessories",
+        alt: "TINKON wholesale car organizers and electric vehicle accessories",
       },
     ],
   },
