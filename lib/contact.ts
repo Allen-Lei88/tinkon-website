@@ -4,6 +4,9 @@ export const WHATSAPP_DISPLAY = "+86 136 0969 9577";
 export const COMPANY_ADDRESS_EN =
   "Room# 1010, Building A, YingFeng Business Center, Dongzhong Road, Guancheng District, Dongguan, Guangdong, China 523009";
 
+export const COMPANY_POSITIONING_EN =
+  "Dongguan TinKon Technology Co., Ltd. — OEM and ODM car organizers and automotive storage accessories for global distributors, importers and private-label brands.";
+
 export const COMPANY_STRUCTURED_ADDRESS = {
   "@type": "PostalAddress",
   streetAddress: "Room 1010, Building A, YingFeng Business Center, Dongzhong Road, Guancheng District",

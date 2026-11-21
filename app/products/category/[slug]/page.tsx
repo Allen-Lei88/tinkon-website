@@ -5,7 +5,12 @@ import MobileNavigation from "@/components/MobileNavigation";
 import { notFound } from "next/navigation";
 import { getProductCategoryBySlug, productCategories } from "@/data/productCategories";
 import { products } from "@/data/products";
-import { COMPANY_ADDRESS_EN, getWhatsAppUrl, WHATSAPP_DISPLAY } from "@/lib/contact";
+import {
+  COMPANY_ADDRESS_EN,
+  COMPANY_POSITIONING_EN,
+  getWhatsAppUrl,
+  WHATSAPP_DISPLAY,
+} from "@/lib/contact";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -235,7 +240,7 @@ export default async function ProductCategoryPage({ params }: Props) {
             <span className="brand-copy"><span className="brand-word">TINKON</span><span className="brand-tag">GLOBAL SUPPLY</span></span>
           </Link>
           <p>
-            Dongguan TinKon Technology Co., Ltd. — OEM and ODM accessories for global B2B buyers.
+            {COMPANY_POSITIONING_EN}
             <span className="company-address">{COMPANY_ADDRESS_EN}</span>
           </p>
           <div className="footer-links">

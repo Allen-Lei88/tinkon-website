@@ -6,7 +6,12 @@ import { notFound } from "next/navigation";
 import { getProductCategoryByName } from "@/data/productCategories";
 import { getProductGallery } from "@/data/productGalleries";
 import { getProduct, products } from "@/data/products";
-import { COMPANY_ADDRESS_EN, getWhatsAppUrl, WHATSAPP_DISPLAY } from "@/lib/contact";
+import {
+  COMPANY_ADDRESS_EN,
+  COMPANY_POSITIONING_EN,
+  getWhatsAppUrl,
+  WHATSAPP_DISPLAY,
+} from "@/lib/contact";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -246,7 +251,7 @@ export default async function ProductDetailPage({ params }: Props) {
         <div className="shell footer-main catalog-footer">
           <Link className="brand brand-footer" href="/"><Image className="brand-logo" src="/tinkon-logo.png" alt="" width={52} height={52} /><span className="brand-copy"><span className="brand-word">TINKON</span><span className="brand-tag">GLOBAL SUPPLY</span></span></Link>
           <p>
-            Dongguan TinKon Technology Co., Ltd. — OEM and ODM accessories for global B2B buyers.
+            {COMPANY_POSITIONING_EN}
             <span className="company-address">{COMPANY_ADDRESS_EN}</span>
           </p>
           <div className="footer-links"><Link href="/products">All products</Link><a href="mailto:allen@tinkontech.com">allen@tinkontech.com</a><a href={productWhatsAppUrl} target="_blank" rel="noopener noreferrer">WhatsApp {WHATSAPP_DISPLAY}</a></div>

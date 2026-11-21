@@ -4,7 +4,12 @@ import Link from "next/link";
 import MobileNavigation from "@/components/MobileNavigation";
 import { getProductCategoryByName } from "@/data/productCategories";
 import { categories, products } from "@/data/products";
-import { COMPANY_ADDRESS_EN, getWhatsAppUrl, WHATSAPP_DISPLAY } from "@/lib/contact";
+import {
+  COMPANY_ADDRESS_EN,
+  COMPANY_POSITIONING_EN,
+  getWhatsAppUrl,
+  WHATSAPP_DISPLAY,
+} from "@/lib/contact";
 
 export const metadata: Metadata = {
   title: "Wholesale Car Organizers & EV Accessories | TINKON",
@@ -46,7 +51,7 @@ export default function ProductsPage() {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    name: "TINKON Wholesale Product Catalog",
+    name: "TINKON Wholesale Car Organizers and EV Accessories",
     url: "https://tinkontech.com/products",
     mainEntity: {
       "@type": "ItemList",
@@ -106,16 +111,16 @@ export default function ProductsPage() {
           <div className="shell catalog-hero-grid">
             <div>
               <p className="section-index">TINKON / PRODUCT CATALOG</p>
-              <h1>A growing product range.<br />Built for wholesale.</h1>
+              <h1>Wholesale car organizers &amp; EV accessories.<br />Built for B2B buyers.</h1>
             </div>
             <div>
               <p>
-                Model-focused accessories prepared for distributors, importers,
-                retailers and private-label programs. Specifications are presented
-                conservatively and fitment is confirmed before bulk orders.
+                Start with model-specific console, seat, dashboard, door and cargo
+                organizers, then add selected protection, charging and interior
+                accessories. Fitment is confirmed before bulk orders.
               </p>
               <div className="catalog-stat-row">
-                <span><strong>EV</strong> model-focused range</span>
+                <span><strong>FIT</strong> vehicle-specific storage</span>
                 <span><strong>OEM</strong> logo & packaging</span>
                 <span><strong>B2B</strong> quotation support</span>
               </div>
@@ -207,7 +212,7 @@ export default function ProductsPage() {
             <span className="brand-copy"><span className="brand-word">TINKON</span><span className="brand-tag">GLOBAL SUPPLY</span></span>
           </Link>
           <p>
-            OEM and ODM accessories for global distributors, importers and private-label brands.
+            {COMPANY_POSITIONING_EN}
             <span className="company-address">{COMPANY_ADDRESS_EN}</span>
           </p>
           <div className="footer-links">

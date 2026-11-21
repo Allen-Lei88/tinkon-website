@@ -5,6 +5,7 @@ import { getProductCategoryByName } from "@/data/productCategories";
 import { categories, featuredProducts as products, products as catalogProducts } from "@/data/products";
 import {
   COMPANY_ADDRESS_EN,
+  COMPANY_POSITIONING_EN,
   COMPANY_STRUCTURED_ADDRESS,
   getWhatsAppUrl,
   WHATSAPP_DISPLAY,
@@ -368,20 +369,19 @@ export default function Home() {
         <section className="section insight-section">
           <div className="shell insight-grid">
             <div className="insight-copy">
-              <p className="section-index">THE PRODUCT-LINE ADVANTAGE</p>
-              <h2>Turn one vehicle platform into a complete accessory program.</h2>
+              <p className="section-index">THE ORGANIZER-RANGE ADVANTAGE</p>
+              <h2>Turn one vehicle platform into a complete storage program.</h2>
               <p>
-                Pair floor protection, storage, sunshades, screen protection and
-                daily-use accessories to increase basket value and give buyers a
-                stronger private-label assortment.
+                Combine console, under-seat, seat-gap, dashboard and door-pocket
+                organizers to build a model-focused private-label assortment.
               </p>
               <a className="text-link" href="#inquiry">
-                Plan a wholesale assortment <span aria-hidden="true">↗</span>
+                Plan an organizer assortment <span aria-hidden="true">↗</span>
               </a>
             </div>
             <Image
-              src="/catalog/tesla-model-y-cup-holder-inserts.jpg"
-              alt="TINKON silicone cup holder inserts in multiple colors"
+              src="/catalog/tesla-model-3-y-tpe-seat-gap-storage-box-set.jpg"
+              alt="TINKON TPE seat-gap storage organizer set for Tesla Model 3 and Model Y"
               width="800"
               height="800"
               sizes="(max-width: 820px) 100vw, (max-width: 1288px) 50vw, 620px"
@@ -464,8 +464,7 @@ export default function Home() {
             </span>
           </a>
           <p>
-            Dongguan TinKon Technology Co., Ltd. — OEM and ODM electric vehicle
-            accessories for global distributors, importers and private-label brands.
+            {COMPANY_POSITIONING_EN}
             <span className="company-address">{COMPANY_ADDRESS_EN}</span>
           </p>
           <div className="footer-links">
