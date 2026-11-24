@@ -1,8 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import MobileNavigation from "@/components/MobileNavigation";
-import { getProductCategoryByName } from "@/data/productCategories";
-import { categories, featuredProducts as products, products as catalogProducts } from "@/data/products";
+import ProductRangeNavigation from "@/components/ProductRangeNavigation";
+import WholesaleEnquiryForm from "@/components/WholesaleEnquiryForm";
+import { products as catalogProducts } from "@/data/products";
+import { EV_INTERIOR_SELECTION_PDF } from "@/lib/catalogDownloads";
 import {
   COMPANY_ADDRESS_EN,
   COMPANY_POSITIONING_EN,
@@ -10,6 +12,20 @@ import {
   getWhatsAppUrl,
   WHATSAPP_DISPLAY,
 } from "@/lib/contact";
+
+const productBySlug = new Map(catalogProducts.map((product) => [product.slug, product]));
+
+const featuredProducts = [
+  "tesla-model-yl-under-seat-storage-box",
+  "tesla-model-y-lower-console-organizer",
+  "tesla-model-y-juniper-tpe-floor-mats",
+  "tesla-foldable-seat-back-hook",
+  "tesla-model-3-y-retractable-console-charging-hub",
+  "ford-mustang-mach-e-panoramic-roof-sunshade",
+].flatMap((slug) => {
+  const product = productBySlug.get(slug);
+  return product ? [product] : [];
+});
 
 const advantages = [
   {
@@ -42,11 +58,11 @@ const structuredData = {
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "#organization",
+      "@id": "https://tinkontech.com/#organization",
       name: "TINKON",
       legalName: "Dongguan TinKon Technology Co., Ltd.",
       description:
-        "OEM and ODM car organizer and automotive storage accessory supplier for global distributors, importers and private-label brands.",
+        "Wholesale Tesla and EV interior accessories supply partner for global distributors, importers and private-label brands, with a focus on vehicle-specific car organizers.",
       url: "https://tinkontech.com",
       logo: "https://tinkontech.com/tinkon-logo.png",
       email: "allen@tinkontech.com",
@@ -82,15 +98,15 @@ export default function Home() {
 
       <div className="utility-bar">
         <div className="shell utility-inner">
-          <span>TINKON · CAR ORGANIZERS · WHOLESALE · OEM / ODM</span>
-          <a href="#inquiry">Global distributor enquiries ↗</a>
+          <span>TINKON · TESLA &amp; EV INTERIOR ACCESSORIES · WHOLESALE · OEM / ODM</span>
+          <a href="#inquiry">Wholesale enquiries</a>
         </div>
       </div>
 
       <header className="site-header">
         <div className="shell nav-row">
           <a className="brand" href="#top" aria-label="TINKON home">
-            <Image className="brand-logo" src="/tinkon-logo.png" alt="" width={46} height={46} priority />
+            <Image className="brand-logo" src="/tinkon-logo.png" alt="TINKON logo" width={46} height={46} />
             <span className="brand-copy">
               <span className="brand-word">TINKON</span>
               <span className="brand-tag">GLOBAL SUPPLY</span>
@@ -99,96 +115,89 @@ export default function Home() {
 
           <nav className="desktop-nav" aria-label="Primary navigation">
             <Link href="/products">Products</Link>
+            <Link href="/about">About TINKON</Link>
             <a href="#capabilities">Capabilities</a>
-            <a href="#standards">Markets</a>
-            <a href="#process">How it works</a>
           </nav>
 
           <a className="nav-cta" href="#inquiry">
-            Request wholesale catalog <span aria-hidden="true">↗</span>
+            Request a quotation
           </a>
 
           <MobileNavigation>
             <Link href="/products">Products</Link>
+            <Link href="/about">About TINKON</Link>
             <a href="#capabilities">Capabilities</a>
             <a href="#standards">Markets</a>
             <a href="#process">How it works</a>
             <a href="#inquiry">Wholesale enquiry</a>
+            <a href={EV_INTERIOR_SELECTION_PDF} download>Download product selection (PDF)</a>
             <a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer">WhatsApp</a>
           </MobileNavigation>
         </div>
       </header>
 
-      <main id="top">
+      <main id="top" className="home-page">
         <section className="hero">
           <div className="shell hero-grid">
-            <div className="hero-copy">
+            <div className="hero-intro">
               <div className="eyebrow">
                 <span className="eyebrow-dot" aria-hidden="true" />
-                Dongguan-based car organizer supply partner
+                Dongguan-based wholesale supply partner
               </div>
               <h1>
-                Wholesale car organizers.
-                <span>Ready for your market.</span>
+                Tesla &amp; EV <span>interior accessories.</span>
               </h1>
               <p className="hero-lede">
-                TINKON helps distributors, importers and automotive accessory
-                brands source, customize and launch model-specific car organizers
-                and storage accessories for overseas markets.
+                Wholesale car organizers, interior protection, hooks and charging accessories
+                for distributors, importers and private-label brands.
               </p>
-              <div className="hero-actions">
-                <Link className="button button-primary" href="/products">
-                  Explore car organizers <span aria-hidden="true">↗</span>
-                </Link>
-                <a className="text-link" href="#capabilities">
-                  Why partner with us <span aria-hidden="true">↗</span>
-                </a>
-              </div>
-              <div className="hero-proof" aria-label="Key capabilities">
-                <div><strong>OEM</strong><span>Brand & packaging support</span></div>
-                <div><strong>FIT</strong><span>Model-specific organizer range</span></div>
-                <div><strong>B2B</strong><span>Wholesale-first service</span></div>
-              </div>
             </div>
 
-            <div className="hero-media">
-              <div className="hero-product-grid" aria-label="Selected TINKON car organizers">
+            <div className="hero-media" aria-label="TINKON product examples">
+              <figure className="hero-photo hero-photo-primary">
                 <Image
-                  src="/catalog/tesla-hidden-armrest-storage-box.jpg"
-                  alt="Hidden armrest storage box for Tesla vehicles"
-                  width="800"
-                  height="800"
-                  sizes="(max-width: 820px) 50vw, 25vw"
-                  priority
+                  src="/catalog/tesla-model-3-highland-door-pocket-organizer-set.jpg"
+                  alt="Four black door-pocket organizers for Tesla Model 3 Highland"
+                  width={800}
+                  height={800}
+                  sizes="(max-width: 820px) calc(100vw - 34px), (max-width: 1288px) 37vw, 450px"
+                  fetchPriority="high"
+                  loading="eager"
                 />
+                <figcaption>Door-pocket organizers · Model 3 Highland</figcaption>
+              </figure>
+              <figure className="hero-photo hero-photo-secondary">
                 <Image
-                  src="/catalog/tesla-model-yl-under-seat-storage-box.jpg"
-                  alt="Under-seat storage box set for Tesla Model YL"
-                  width="800"
-                  height="800"
-                  sizes="(max-width: 820px) 50vw, 25vw"
-                  priority
+                  src="/catalog/tesla-model-y-standard-console-cup-holder-organizer.jpg"
+                  alt="Black and light gray console cup-holder organizer trays"
+                  width={800}
+                  height={800}
+                  sizes="(max-width: 820px) 1px, 17vw"
                 />
+                <figcaption>Console storage</figcaption>
+              </figure>
+              <figure className="hero-photo hero-photo-secondary">
                 <Image
-                  src="/catalog/tesla-under-screen-storage-tray.jpg"
-                  alt="Dual-layer under-screen storage tray"
-                  width="800"
-                  height="800"
-                  sizes="(max-width: 820px) 50vw, 25vw"
-                  priority
+                  src="/catalog/rivian-r2-rear-seat-back-protector-mats.jpg"
+                  alt="Three black ribbed rear seat-back protection panels for Rivian R2"
+                  width={800}
+                  height={800}
+                  sizes="(max-width: 820px) 1px, 17vw"
                 />
-                <Image
-                  src="/catalog/tesla-center-console-storage-box-set.jpg"
-                  alt="Center console storage box organizer set for Tesla vehicles"
-                  width="800"
-                  height="800"
-                  sizes="(max-width: 820px) 50vw, 25vw"
-                  priority
-                />
+                <figcaption>Seat-back protection</figcaption>
+              </figure>
+            </div>
+
+            <div className="hero-controls">
+              <div className="hero-actions">
+                <Link className="button button-primary" href="/products">Browse products</Link>
+                <a className="text-link" href="#inquiry">Request a quotation</a>
               </div>
-              <div className="hero-label">
-                <span>TINKON ORGANIZER FOCUS / 01</span>
-                <strong>Useful storage,<br />model-specific fit.</strong>
+              <a className="hero-download text-link" href={EV_INTERIOR_SELECTION_PDF} download>Download product selection (PDF)</a>
+              <div className="hero-proof" aria-label="Key capabilities">
+                <div><strong>OEM</strong><span>Brand & packaging support</span></div>
+                <div><strong>FIT</strong><span>Vehicle-specific applications</span></div>
+                <div><strong>B2B</strong><span>Wholesale-first service</span></div>
               </div>
             </div>
           </div>
@@ -210,18 +219,17 @@ export default function Home() {
             <div className="section-heading">
               <div>
                 <p className="section-index">01 / PRODUCT RANGE</p>
-                <h2>One partner.<br />A growing organizer range.</h2>
+                <h2>Build your EV interior range.</h2>
               </div>
               <p>
-                Build a focused car-organizer range for retail, e-commerce and
-                automotive distribution. TINKON coordinates model selection,
-                presentation and export-ready packaging around your market.
-                Browse the growing range for detailed specifications.
+                Start with vehicle-specific storage and build around it with
+                protection, holders, charging accessories and selected non-Tesla
+                applications. Check the product pages for fitment and specifications.
               </p>
             </div>
 
             <div className="product-grid">
-              {products.map((product, index) => (
+              {featuredProducts.map((product) => (
                 <article className="product-card" key={product.slug}>
                   <div className="product-image">
                     <Image
@@ -231,9 +239,9 @@ export default function Home() {
                       height="640"
                       sizes="(max-width: 580px) 100vw, (max-width: 1050px) 50vw, (max-width: 1288px) 33vw, 412px"
                     />
-                    <span>{String(index + 1).padStart(2, "0")}</span>
                   </div>
                   <div className="product-copy">
+                    <p className="home-feature-category">{product.category}</p>
                     <h3>{product.name}</h3>
                     <p>{product.description}</p>
                     <ul>
@@ -251,19 +259,7 @@ export default function Home() {
                 <p className="section-index">BROWSE BY CATEGORY</p>
                 <h3>Find the right product group.</h3>
               </div>
-              <div className="home-category-grid">
-                {categories.map((category) => {
-                  const categoryInfo = getProductCategoryByName(category);
-                  if (!categoryInfo) return null;
-                  const count = catalogProducts.filter((product) => product.category === category).length;
-                  return (
-                    <Link href={`/products/category/${categoryInfo.slug}`} key={category}>
-                      <strong>{category}</strong>
-                      <span>{count} {count === 1 ? "product" : "products"}</span>
-                    </Link>
-                  );
-                })}
-              </div>
+              <ProductRangeNavigation />
             </div>
             <div className="catalog-callout">
               <p>
@@ -399,57 +395,9 @@ export default function Home() {
                 estimated order volume. We’ll use it to prepare a focused
                 wholesale range.
               </p>
-              <div className="direct-contact-links">
-                <a className="direct-email" href="mailto:allen@tinkontech.com">
-                  allen@tinkontech.com <span aria-hidden="true">↗</span>
-                </a>
-                <a className="direct-whatsapp" href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer">
-                  WhatsApp {WHATSAPP_DISPLAY} <span aria-hidden="true">↗</span>
-                </a>
-              </div>
               <address className="direct-address">{COMPANY_ADDRESS_EN}</address>
             </div>
-            <form
-              className="inquiry-form"
-              action="mailto:allen@tinkontech.com?subject=TINKON%20Wholesale%20Enquiry"
-              method="post"
-              encType="text/plain"
-            >
-              <label>
-                Company name
-                <input type="text" name="company" placeholder="Your company" required />
-              </label>
-              <label>
-                Business email
-                <input type="email" name="email" placeholder="name@company.com" required />
-              </label>
-              <label>
-                Primary market
-                <input type="text" name="market" placeholder="Country / region" required />
-              </label>
-              <label>
-                Products of interest
-                <select name="products" defaultValue="">
-                  <option value="" disabled>Select a category</option>
-                  {categories.map((category) => <option key={category}>{category}</option>)}
-                  <option>Multiple categories</option>
-                </select>
-              </label>
-              <label className="form-wide">
-                Requirements
-                <textarea
-                  name="requirements"
-                  rows={4}
-                  placeholder="Vehicle models, target price, annual volume, private label needs…"
-                />
-              </label>
-              <button className="button button-primary form-wide" type="submit">
-                Prepare wholesale enquiry <span aria-hidden="true">↗</span>
-              </button>
-              <p className="form-note form-wide">
-                This opens your email app with your enquiry details. Review and send the email there, or contact us directly by email or WhatsApp.
-              </p>
-            </form>
+            <WholesaleEnquiryForm />
           </div>
         </section>
       </main>
@@ -457,7 +405,7 @@ export default function Home() {
       <footer>
         <div className="shell footer-main">
           <a className="brand brand-footer" href="#top" aria-label="TINKON home">
-            <Image className="brand-logo" src="/tinkon-logo.png" alt="" width={52} height={52} />
+            <Image className="brand-logo" src="/tinkon-logo.png" alt="TINKON logo" width={52} height={52} />
             <span className="brand-copy">
               <span className="brand-word">TINKON</span>
               <span className="brand-tag">GLOBAL SUPPLY</span>
@@ -472,6 +420,9 @@ export default function Home() {
             <a href="mailto:allen@tinkontech.com">allen@tinkontech.com</a>
             <a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer">WhatsApp {WHATSAPP_DISPLAY}</a>
             <Link href="/products">Products</Link>
+            <Link href="/about">About TINKON</Link>
+            <Link href="/about#buyer-guide">Wholesale buyer guide</Link>
+            <a href={EV_INTERIOR_SELECTION_PDF} download>Download product selection (PDF)</a>
             <a href="#capabilities">B2B support</a>
             <a href="#standards">Markets</a>
             <a href="#inquiry">Enquiry</a>

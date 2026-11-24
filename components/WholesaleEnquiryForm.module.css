@@ -1,0 +1,86 @@
+.form {
+  display: grid;
+  gap: 1.15rem;
+  color: #171b18;
+  min-width: 0;
+}
+
+.contactCard {
+  display: grid;
+  gap: 1rem;
+  min-width: 0;
+  padding: clamp(20px, 3.4vw, 38px);
+  background: #fff;
+  border-inline-start: 3px solid var(--green-dark);
+}
+
+.contactCard h3 { margin: 0; font-size: clamp(22px, 2.6vw, 34px); font-weight: 750; line-height: 1.12; }
+.contactCard p { margin: 0; line-height: 1.55; }
+.contactActions { display: flex; flex-wrap: wrap; gap: 10px; }
+.contactActions a { min-height: 46px; gap: 16px; overflow-wrap: anywhere; }
+
+.fields {
+  display: grid;
+  gap: 1rem;
+  min-width: 0;
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.form label { display: block; font-size: 0.94rem; font-weight: 700; }
+
+.form input, .form select, .form textarea {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 2.85rem;
+  padding: 0.69rem 0.75rem;
+  margin-top: 0.35rem;
+  border: 1px solid #ccd4ca;
+  border-radius: 0;
+  background: #fff;
+  color: #171b18;
+  font: inherit;
+  font-weight: 400;
+}
+
+.form textarea { resize: vertical; }
+.form input[type="file"] { font-size: 0.88rem; }
+.form :is(input, select, textarea, button, a):focus-visible { outline: 2px solid #346a00; outline-offset: 3px; }
+
+.submit {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1.25rem;
+  border: 1px solid #171b18;
+  border-radius: 0;
+  background: #171b18;
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.submit:disabled { background: #e1e5de; border-color: #bfc7bd; color: #535e57; cursor: default; }
+.submit:not(:disabled):hover { background: #2f3932; }
+.context, .note, .feedback p { margin: 0; }
+.context { padding: 0.75rem 1rem; background: #eff3eb; border-inline-start: 3px solid #3e7600; }
+.feedback { overflow-wrap: anywhere; }
+.feedback:empty { margin-block-start: -1.15rem; }
+.note { font-size: 0.86rem; line-height: 1.55; color: #4e5b53; }
+.note a { color: #245900; text-decoration: underline; text-underline-offset: 0.18em; overflow-wrap: anywhere; }
+.trap { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+
+@media (max-width: 640px) {
+  .grid { grid-template-columns: minmax(0, 1fr); }
+  .contactActions { flex-direction: column; }
+}

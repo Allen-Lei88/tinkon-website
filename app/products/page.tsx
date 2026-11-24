@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import MobileNavigation from "@/components/MobileNavigation";
+import ProductRangeNavigation from "@/components/ProductRangeNavigation";
 import { getProductCategoryByName } from "@/data/productCategories";
 import { categories, products } from "@/data/products";
+import { EV_INTERIOR_SELECTION_PDF } from "@/lib/catalogDownloads";
 import {
   COMPANY_ADDRESS_EN,
   COMPANY_POSITIONING_EN,
@@ -48,21 +50,35 @@ const categoryIds: Record<string, string> = {
 };
 
 export default function ProductsPage() {
+  const catalogUrl = "https://tinkontech.com/products";
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    name: "TINKON Wholesale Car Organizers and EV Accessories",
-    url: "https://tinkontech.com/products",
-    mainEntity: {
-      "@type": "ItemList",
-      numberOfItems: products.length,
-      itemListElement: products.map((product, index) => ({
-        "@type": "ListItem",
-        position: index + 1,
-        url: `https://tinkontech.com/products/${product.slug}`,
-        name: product.fullTitle,
-      })),
-    },
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        name: "TINKON Wholesale Car Organizers and EV Accessories",
+        url: catalogUrl,
+        breadcrumb: { "@id": `${catalogUrl}#breadcrumb` },
+        mainEntity: {
+          "@type": "ItemList",
+          numberOfItems: products.length,
+          itemListElement: products.map((product, index) => ({
+            "@type": "ListItem",
+            position: index + 1,
+            url: `${catalogUrl}/${product.slug}`,
+            name: product.fullTitle,
+          })),
+        },
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${catalogUrl}#breadcrumb`,
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: "https://tinkontech.com/" },
+          { "@type": "ListItem", position: 2, name: "Products", item: catalogUrl },
+        ],
+      },
+    ],
   };
 
   return (
@@ -92,15 +108,17 @@ export default function ProductsPage() {
             <Link href="/">Home</Link>
             <a href="#categories">Categories</a>
             <a href="#downloads">Catalogs</a>
+            <Link href="/about">About</Link>
           </nav>
-          <a className="nav-cta" href="mailto:allen@tinkontech.com?subject=TINKON%20Product%20Enquiry">
+          <Link className="nav-cta" href="/#inquiry">
             Request a quotation <span aria-hidden="true">↗</span>
-          </a>
+          </Link>
           <MobileNavigation>
             <Link href="/">Home</Link>
             <a href="#categories">Categories</a>
             <a href="#downloads">Download catalogs</a>
-            <a href="mailto:allen@tinkontech.com?subject=TINKON%20Product%20Enquiry">Request a quotation</a>
+            <Link href="/about">About</Link>
+            <Link href="/#inquiry">Request a quotation</Link>
             <a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer">WhatsApp</a>
           </MobileNavigation>
         </div>
@@ -130,15 +148,7 @@ export default function ProductsPage() {
 
         <section className="catalog-category-nav" id="categories">
           <div className="shell">
-            {categories.map((category) => {
-              const categoryInfo = getProductCategoryByName(category);
-              if (!categoryInfo) return null;
-              return (
-                <Link href={`/products/category/${categoryInfo.slug}`} key={category}>
-                  {category}
-                </Link>
-              );
-            })}
+            <ProductRangeNavigation />
           </div>
         </section>
 
@@ -190,15 +200,12 @@ export default function ProductsPage() {
         <section className="catalog-downloads" id="downloads">
           <div className="shell catalog-downloads-grid">
             <div>
-              <p className="section-index">DOWNLOADABLE CATALOGS</p>
-              <h2>Share the range with your buying team.</h2>
+              <p className="section-index">DOWNLOADABLE PRODUCT SELECTION</p>
+              <h2>Share a shortlist with your buying team.</h2>
             </div>
             <div className="download-list">
-              <a href="/downloads/TINKON_Tesla_Accessories_Catalogue_2026.pdf" download>
-                <span>Tesla Accessories Catalog 2026</span><b>PDF ↓</b>
-              </a>
-              <a href="/downloads/TINKON_Product_Catalogue_2026.pdf" download>
-                <span>TINKON Product Catalog 2026</span><b>PDF ↓</b>
+              <a href={EV_INTERIOR_SELECTION_PDF} download>
+                <span>EV Interior Accessories: Organizers &amp; Protection</span><b>PDF ↓</b>
               </a>
             </div>
           </div>
@@ -217,6 +224,7 @@ export default function ProductsPage() {
           </p>
           <div className="footer-links">
             <Link href="/">Home</Link>
+            <Link href="/about">About</Link>
             <a href="mailto:allen@tinkontech.com">allen@tinkontech.com</a>
             <a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer">WhatsApp {WHATSAPP_DISPLAY}</a>
           </div>

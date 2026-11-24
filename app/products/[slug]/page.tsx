@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import MobileNavigation from "@/components/MobileNavigation";
 import { notFound } from "next/navigation";
+import { galleryCaptions } from "@/data/galleryCaptions";
 import { getProductCategoryByName } from "@/data/productCategories";
 import { getProductGallery } from "@/data/productGalleries";
 import { getProduct, products } from "@/data/products";
@@ -35,7 +36,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: product.seoTitle ?? `${product.name} | TINKON Wholesale`,
     description,
-    keywords: product.keywords,
     alternates: { canonical: url },
     openGraph: {
       type: "website",
@@ -62,6 +62,7 @@ export default async function ProductDetailPage({ params }: Props) {
   if (!categoryInfo) notFound();
   const productUrl = `https://tinkontech.com/products/${product.slug}`;
   const categoryUrl = `https://tinkontech.com/products/category/${categoryInfo.slug}`;
+  const inquiryUrl = `/?product=${encodeURIComponent(product.slug)}#inquiry`;
   const productWhatsAppUrl = getWhatsAppUrl(
     `Hello TINKON, I'm interested in ${product.name}. Please send me wholesale information.`,
   );
@@ -118,15 +119,17 @@ export default async function ProductDetailPage({ params }: Props) {
           <nav className="desktop-nav" aria-label="Product navigation">
             <Link href="/">Home</Link>
             <Link href="/products">All products</Link>
+            <Link href="/about">About</Link>
           </nav>
-          <a className="nav-cta" href={`mailto:allen@tinkontech.com?subject=${encodeURIComponent(`Enquiry: ${product.name}`)}`}>
-            Request a quotation <span aria-hidden="true">↗</span>
-          </a>
+          <Link className="nav-cta" href={inquiryUrl}>
+            Request a quotation
+          </Link>
           <MobileNavigation>
             <Link href="/">Home</Link>
             <Link href="/products">All products</Link>
             <Link href={`/products/category/${categoryInfo.slug}`}>{product.category}</Link>
-            <a href={`mailto:allen@tinkontech.com?subject=${encodeURIComponent(`Enquiry: ${product.name}`)}`}>Request a quotation</a>
+            <Link href="/about">About</Link>
+            <Link href={inquiryUrl}>Request a quotation</Link>
             <a href={productWhatsAppUrl} target="_blank" rel="noopener noreferrer">WhatsApp</a>
           </MobileNavigation>
         </div>
@@ -152,9 +155,9 @@ export default async function ProductDetailPage({ params }: Props) {
               {product.features.map((feature) => <li key={feature}>{feature}</li>)}
             </ul>
             <div className="product-contact-actions">
-              <a className="button button-primary" href={`mailto:allen@tinkontech.com?subject=${encodeURIComponent(`Wholesale enquiry: ${product.name}`)}`}>
-                Email enquiry <span aria-hidden="true">↗</span>
-              </a>
+              <Link className="button button-primary" href={inquiryUrl}>
+                Request a quotation
+              </Link>
               <a className="button button-whatsapp" href={productWhatsAppUrl} target="_blank" rel="noopener noreferrer">
                 WhatsApp us <span aria-hidden="true">↗</span>
               </a>
@@ -170,23 +173,27 @@ export default async function ProductDetailPage({ params }: Props) {
                   <p className="section-index">PRODUCT GALLERY</p>
                   <h2 id="product-gallery-title">More product details</h2>
                 </div>
-                <p>Explore additional angles, installation views and available configurations. Select an image to view it at full size.</p>
+                <p>Explore additional product views. Select an image to view it at full size.</p>
               </div>
               <div className="product-gallery-grid">
-                {gallery.map((src, index) => (
-                  <figure key={src}>
-                    <a href={src} target="_blank" rel="noreferrer" aria-label={`Open additional product view ${index + 2}`}>
-                      <Image
-                        src={src}
-                        alt={`${product.imageAlt} - additional view ${index + 2}`}
-                        width={800}
-                        height={800}
-                        sizes="(max-width: 580px) 100vw, (max-width: 1050px) 50vw, (max-width: 1288px) 25vw, 295px"
-                      />
-                    </a>
-                    <figcaption>Additional view {String(index + 2).padStart(2, "0")}</figcaption>
-                  </figure>
-                ))}
+                {gallery.map((src, index) => {
+                  const description = galleryCaptions[src];
+                  const caption = description?.caption ?? `Additional view ${String(index + 2).padStart(2, "0")}`;
+                  return (
+                    <figure key={src}>
+                      <a href={src} target="_blank" rel="noreferrer" aria-label={`View full-size image: ${caption}`}>
+                        <Image
+                          src={src}
+                          alt={description?.alt ?? `${product.imageAlt} - additional view ${index + 2}`}
+                          width={800}
+                          height={800}
+                          sizes="(max-width: 580px) 100vw, (max-width: 1050px) 50vw, (max-width: 1288px) 25vw, 295px"
+                        />
+                      </a>
+                      <figcaption>{caption}</figcaption>
+                    </figure>
+                  );
+                })}
               </div>
               <p className="product-gallery-note">Some images may show alternate colors or configurations within the same product family. Confirm the selected vehicle version and option before ordering.</p>
             </div>
@@ -214,9 +221,9 @@ export default async function ProductDetailPage({ params }: Props) {
           <div className="shell partner-strip">
             <p className="section-index">WHOLESALE SUPPORT</p>
             <h2>Build this product for your market.</h2>
-            <p>Share your target country, vehicle version, preferred packaging and estimated volume. TINKON will coordinate samples, customization and production follow-up.</p>
+            <p>Share the vehicle version, estimated order size and destination. Ask us to confirm sample terms, MOQ, lead time, payment and shipping options. For freight planning, request unit pack dimensions, units per carton, outer carton dimensions and gross weight.</p>
             <div className="partner-contact-links">
-              <a className="text-link" href={`mailto:allen@tinkontech.com?subject=${encodeURIComponent(`OEM/ODM request: ${product.name}`)}`}>allen@tinkontech.com <span aria-hidden="true">↗</span></a>
+              <Link className="text-link" href={inquiryUrl}>Request a quotation</Link>
               <a className="text-link" href={productWhatsAppUrl} target="_blank" rel="noopener noreferrer">WhatsApp {WHATSAPP_DISPLAY} <span aria-hidden="true">↗</span></a>
             </div>
           </div>
@@ -254,7 +261,7 @@ export default async function ProductDetailPage({ params }: Props) {
             {COMPANY_POSITIONING_EN}
             <span className="company-address">{COMPANY_ADDRESS_EN}</span>
           </p>
-          <div className="footer-links"><Link href="/products">All products</Link><a href="mailto:allen@tinkontech.com">allen@tinkontech.com</a><a href={productWhatsAppUrl} target="_blank" rel="noopener noreferrer">WhatsApp {WHATSAPP_DISPLAY}</a></div>
+          <div className="footer-links"><Link href="/products">All products</Link><Link href="/about">About</Link><a href="mailto:allen@tinkontech.com">allen@tinkontech.com</a><a href={productWhatsAppUrl} target="_blank" rel="noopener noreferrer">WhatsApp {WHATSAPP_DISPLAY}</a></div>
         </div>
       </footer>
     </>

@@ -11,8 +11,16 @@ import {
   getWhatsAppUrl,
   WHATSAPP_DISPLAY,
 } from "@/lib/contact";
+import styles from "./specialist.module.css";
 
 type Props = { params: Promise<{ slug: string }> };
+
+const screenProtectorHighlights = new Set([
+  "tesla-model-y-yl-screen-protector",
+  "bmw-x1-ix1-integrated-display-screen-protector",
+  "byd-seal-screen-protectors",
+  "geely-galaxy-e5-ex5-screen-protector",
+]);
 
 export function generateStaticParams() {
   return productCategories.map((category) => ({ slug: category.slug }));
@@ -64,6 +72,15 @@ export default async function ProductCategoryPage({ params }: Props) {
   if (categoryProducts.length === 0) notFound();
 
   const categoryUrl = `https://tinkontech.com/products/category/${category.slug}`;
+  const inquiryUrl = `/?category=${encodeURIComponent(category.slug)}#inquiry`;
+  const isScreenProtector = category.slug === "automotive-screen-protectors";
+  const showcaseProducts = isScreenProtector
+    ? categoryProducts.filter((product) => screenProtectorHighlights.has(product.slug))
+    : categoryProducts;
+  const remainingProducts = isScreenProtector
+    ? categoryProducts.filter((product) => !screenProtectorHighlights.has(product.slug))
+    : [];
+  const CardTitle = isScreenProtector ? "h3" : "h2";
   const categoryWhatsAppUrl = getWhatsAppUrl(
     `Hello TINKON, I'm interested in your ${category.name} range. Please send me wholesale information.`,
   );
@@ -121,17 +138,16 @@ export default async function ProductCategoryPage({ params }: Props) {
           <nav className="desktop-nav" aria-label="Category navigation">
             <Link href="/">Home</Link>
             <Link href="/products">All products</Link>
+            <Link href="/about">About</Link>
           </nav>
-          <a
-            className="nav-cta"
-            href={`mailto:allen@tinkontech.com?subject=${encodeURIComponent(`Wholesale category enquiry: ${category.name}`)}`}
-          >
-            Request a quotation <span aria-hidden="true">↗</span>
-          </a>
+          <Link className="nav-cta" href={inquiryUrl}>
+            Request a quotation
+          </Link>
           <MobileNavigation>
             <Link href="/">Home</Link>
             <Link href="/products">All products</Link>
-            <a href={`mailto:allen@tinkontech.com?subject=${encodeURIComponent(`Wholesale category enquiry: ${category.name}`)}`}>Request a quotation</a>
+            <Link href="/about">About</Link>
+            <Link href={inquiryUrl}>Request a quotation</Link>
             <a href={categoryWhatsAppUrl} target="_blank" rel="noopener noreferrer">WhatsApp</a>
           </MobileNavigation>
         </div>
@@ -155,8 +171,21 @@ export default async function ProductCategoryPage({ params }: Props) {
 
         <section className="category-product-section">
           <div className="shell">
+            {isScreenProtector && (
+              <>
+                <aside className={styles.specialistPanel} aria-labelledby="specialist-site-title">
+                  <div>
+                    <p className="section-index">TINKON SPECIALIST SITE</p>
+                    <h2 id="specialist-site-title">Sourcing automotive screen protectors?</h2>
+                    <p>Explore vehicle-specific display coverage and fitment guides on our dedicated AutoScreenProtector website.</p>
+                  </div>
+                  <a className="button button-primary" href="https://autoscreenprotector.com/">View the specialist range</a>
+                </aside>
+                <h2 className={styles.selectedHeading}>Selected products from the TINKON catalog</h2>
+              </>
+            )}
             <div className="catalog-grid">
-              {categoryProducts.map((product) => (
+              {showcaseProducts.map((product) => (
                 <article className="catalog-card" key={product.slug}>
                   <Link className="catalog-card-image" href={`/products/${product.slug}`}>
                     <Image
@@ -169,7 +198,7 @@ export default async function ProductCategoryPage({ params }: Props) {
                   </Link>
                   <div className="catalog-card-copy">
                     <p>{product.category}</p>
-                    <h2><Link href={`/products/${product.slug}`}>{product.name}</Link></h2>
+                    <CardTitle><Link href={`/products/${product.slug}`}>{product.name}</Link></CardTitle>
                     <span>{product.description}</span>
                     <Link className="catalog-card-link" href={`/products/${product.slug}`}>
                       View specifications <b aria-hidden="true">↗</b>
@@ -178,6 +207,16 @@ export default async function ProductCategoryPage({ params }: Props) {
                 </article>
               ))}
             </div>
+            {remainingProducts.length > 0 && (
+              <section className={styles.remainingLinks} aria-labelledby="remaining-protectors-title">
+                <h2 id="remaining-protectors-title">More screen protector listings</h2>
+                <ul>
+                  {remainingProducts.map((product) => (
+                    <li key={product.slug}><Link href={`/products/${product.slug}`}>{product.name}</Link></li>
+                  ))}
+                </ul>
+              </section>
+            )}
           </div>
         </section>
 
@@ -219,12 +258,9 @@ export default async function ProductCategoryPage({ params }: Props) {
               {category.sourcingNotes.map((note) => <li key={note}>{note}</li>)}
             </ul>
             <div className="category-contact-actions">
-              <a
-                className="button button-primary"
-                href={`mailto:allen@tinkontech.com?subject=${encodeURIComponent(`Wholesale range request: ${category.name}`)}`}
-              >
-                Email range request <span aria-hidden="true">↗</span>
-              </a>
+              <Link className="button button-primary" href={inquiryUrl}>
+                Request a quotation
+              </Link>
               <a className="button button-whatsapp" href={categoryWhatsAppUrl} target="_blank" rel="noopener noreferrer">
                 WhatsApp us <span aria-hidden="true">↗</span>
               </a>
@@ -245,6 +281,7 @@ export default async function ProductCategoryPage({ params }: Props) {
           </p>
           <div className="footer-links">
             <Link href="/products">All products</Link>
+            <Link href="/about">About</Link>
             <a href="mailto:allen@tinkontech.com">allen@tinkontech.com</a>
             <a href={categoryWhatsAppUrl} target="_blank" rel="noopener noreferrer">WhatsApp {WHATSAPP_DISPLAY}</a>
           </div>

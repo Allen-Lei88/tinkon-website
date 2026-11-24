@@ -82,7 +82,7 @@ const productPaths = productItems.map((item) => pathOf(item.url));
 const categoryNavigation = elementByClass(catalogHtml, "section", "catalog-category-nav");
 assert.ok(categoryNavigation, "Catalog category navigation must exist");
 const categoryPaths = tags(categoryNavigation).filter((tag) => tag.name === "a").map((tag) => pathOf(tag.attrs.href));
-const allPaths = ["/", "/products", ...categoryPaths, ...productPaths];
+const allPaths = ["/", "/about", "/products", ...categoryPaths, ...productPaths];
 const routeSet = new Set(allPaths);
 
 function assertItemList(list, label) {
@@ -166,6 +166,7 @@ test("every generated page has one heading, canonical URL, accessible navigation
     const canonicals = pageTags.filter((tag) => tag.name === "link" && tag.attrs.rel === "canonical");
     assert.equal(canonicals.length, 1, `${path}: one canonical`);
     assert.equal(pathOf(canonicals[0].attrs.href), path, `${path}: canonical target`);
+    assert.ok(!pageTags.some((tag) => tag.name === "meta" && tag.attrs.name === "keywords"), `${path}: obsolete keywords meta`);
     const ids = pageTags.filter((tag) => tag.attrs.id !== undefined).map((tag) => tag.attrs.id);
     assert.equal(new Set(ids).size, ids.length, `${path}: duplicate IDs`);
     const menu = elementByClass(html, "details", "mobile-nav");
@@ -229,14 +230,38 @@ test("local navigation, anchor links, image sources and build assets resolve on 
   }
 });
 
-test("wholesale enquiry explains the email-app handoff without claiming website delivery", async () => {
+test("wholesale enquiry has useful email and WhatsApp links before JS or when form service is off", async () => {
   const html = await render("/");
-  const form = [...html.matchAll(/<form\b([^>]*)>([\s\S]*?)<\/form>/gi)]
-    .find((match) => (attributes(match[1]).class ?? "").split(/\s+/).includes("inquiry-form"));
-  assert.ok(form, "Wholesale enquiry form must exist");
-  assert.match(attributes(form[1]).action, /^mailto:allen@tinkontech\.com\?/);
-  const text = decodeHtml(form[2].replace(/<[^>]+>/g, " ")).replace(/\s+/g, " ");
-  assert.match(text, /opens your email app/i);
-  assert.match(text, /review and send the email there/i);
-  assert.match(text, /email or WhatsApp/i);
+  const section = elementByClass(html, "section", "inquiry-section");
+  assert.ok(section, "Wholesale enquiry section must exist");
+  const sectionTags = tags(section);
+  assert.ok(!sectionTags.some((tag) => ["form", "input", "fieldset"].includes(tag.name)), "Do not render an inactive form for buyers");
+  const contacts = sectionTags.filter((tag) => tag.name === "a");
+  assert.ok(contacts.some((tag) => tag.attrs.href === "mailto:allen@tinkontech.com?subject=Wholesale%20enquiry"));
+  assert.ok(contacts.some((tag) => tag.attrs.href.startsWith("https://wa.me/8613609699577?text=")));
+  const text = decodeHtml(section.replace(/<[^>]+>/g, " ")).replace(/\s+/g, " ");
+  assert.match(text, /Email your request/i);
+  assert.match(text, /Message on WhatsApp/i);
+  assert.match(text, /attach it to your email/i);
+  assert.doesNotMatch(text, /reply within 24 hours/i);
+  const links = tags(html).filter((tag) => tag.name === "a");
+  assert.ok(links.some((tag) => tag.attrs.href === "/downloads/TINKON_EV_Interior_Accessories_Selection.pdf" && "download" in tag.attrs));
+  for (const [parameter, paths] of [["product", productPaths], ["category", categoryPaths]]) {
+    for (const path of paths) {
+      const slug = path.split("/").at(-1);
+      assert.ok(tags(await render(path)).some((tag) => tag.name === "a" &&
+        tag.attrs.href === `/?${parameter}=${encodeURIComponent(slug)}#inquiry`), `${path}: contextual quotation link`);
+    }
+  }
+});
+
+test("screen-protector category links its specialist site without dropping existing product links", async () => {
+  const path = "/products/category/automotive-screen-protectors";
+  const html = await render(path);
+  const category = schemaNodes(html).find((node) => node["@type"] === "CollectionPage");
+  const links = new Set(tags(html).filter((tag) => tag.name === "a").map((tag) => tag.attrs.href));
+  assert.ok(links.has("https://autoscreenprotector.com/"));
+  for (const item of category.mainEntity.itemListElement) {
+    assert.ok(links.has(pathOf(item.url)), `Preserve screen-protector link: ${item.url}`);
+  }
 });
