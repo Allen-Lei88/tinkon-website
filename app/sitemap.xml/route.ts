@@ -28,13 +28,16 @@ export async function GET() {
   const origin = "https://tinkontech.com";
   // Keep these dates tied to significant, verified page changes. Do not stamp
   // every build as a fresh update: Google can ignore inaccurate lastmod data.
-  const homepageLastModified = "2026-11-21";
-  const catalogLastModified = "2026-11-21";
+  // Production commit 996c02d published the revised home and catalog and added About.
+  const homepageLastModified = "2026-11-24";
+  const catalogLastModified = "2026-11-24";
+  const aboutLastModified = "2026-11-24";
   const categoryLastModified = "2026-11-11";
   const teslaStorageLastModified = "2026-11-21";
   const urls = [
     { url: origin, lastModified: homepageLastModified },
     { url: `${origin}/products`, lastModified: catalogLastModified },
+    { url: `${origin}/about`, lastModified: aboutLastModified },
     ...productCategories.map((category) => ({
       url: `${origin}/products/category/${category.slug}`,
       lastModified: category.slug === "tesla-storage-organization"
